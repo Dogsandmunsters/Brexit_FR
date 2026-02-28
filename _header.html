@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1a2870">
+    <title>Brexit : saurez-vous sauver le Royaume-Uni ?</title>
+    <link rel="manifest" href="manifest.json">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, 'Times New Roman', serif;
+            background-color: #fafaf8;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        #app {
+            max-width: 800px;
+            margin: 0 auto;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        header {
+            background-color: #1a2870;
+            color: #dc143c;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        header h1 {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .header-btn {
+            background: transparent;
+            border: 1px solid #dc143c;
+            color: #dc143c;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-size: 0.9em;
+            border-radius: 3px;
+            transition: all 0.2s;
+        }
+
+        .header-btn:hover {
+            background-color: #dc143c;
+            color: white;
+        }
+
+        /* Main content */
+        #content {
+            flex: 1;
+            padding: 30px 20px;
+        }
+
+        /* Start screen */
+        #start-screen {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        #start-screen img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 30px;
+        }
+
+        #start-screen button {
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            margin: 15px auto;
+            padding: 15px;
+            font-size: 1.1em;
+            background-color: #1a2870;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        #start-screen button:hover {
+            background-color: #2a3880;
+        }
+
+        /* Prose text */
+        .prose {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        .prose p {
+            margin-bottom: 15px;
+        }
+
+        .prose .centered {
+            text-align: center;
+        }
+
+        /* Report text */
+        .report {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f5f0e8;
+            border: 2px solid #d4c5a9;
+            padding: 20px;
+            margin: 20px 30px;
+            border-radius: 5px;
+        }
+
+        .report p {
+            margin-bottom: 10px;
+        }
+
+        /* Coin toss */
+        .coin-toss {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            background-color: #f5f0e8;
+            border-radius: 5px;
+        }
+
+        .coins {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .coin {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .coin img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        #toss-button {
+            background-color: #1a2870;
+            color: white;
+            padding: 12px 30px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 15px 0;
+        }
+
+        #toss-button:hover {
+            background-color: #2a3880;
+        }
+
+        .toss-outcomes {
+            margin-top: 20px;
+        }
+
+        /* Options */
+        .options {
+            margin-top: 30px;
+        }
+
+        .option-button {
+            display: block;
+            width: 100%;
+            background-color: #1a2870;
+            color: white;
+            padding: 15px 20px;
+            margin-bottom: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.05em;
+            font-family: Georgia, 'Times New Roman', serif;
+            text-align: left;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .option-button:hover {
+            background-color: #2a3880;
+        }
+
+        /* Popups */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-overlay.active {
+            display: flex;
+        }
+
+        .popup {
+            background-color: #f5e6d3;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            position: relative;
+        }
+
+        .popup h2 {
+            color: #1a2870;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #1a2870;
+            color: white;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2em;
+        }
+
+        .memo-section {
+            margin-bottom: 20px;
+        }
+
+        .memo-section h3 {
+            color: #1a2870;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        .metrics {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .metric {
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #d4c5a9;
+        }
+
+        .metric-name {
+            font-weight: bold;
+            color: #1a2870;
+        }
+
+        .issues-list, .keywords-list {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 4px;
+            border: 1px solid #d4c5a9;
+        }
+
+        .issue-item {
+            padding: 5px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .issue-item.completed {
+            text-decoration: line-through;
+            color: #666;
+        }
+
+        .keyword-item {
+            display: inline-block;
+            background-color: #1a2870;
+            color: white;
+            padding: 5px 10px;
+            margin: 3px;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+
+        .who-content {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .who-content p {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <header id="header" style="display: none;">
+            <h1>Brexit</h1>
+            <div class="header-buttons">
+                <button class="header-btn" id="memo-btn">Bloc-notes</button>
+                <button class="header-btn" id="reset-btn">Recommencer</button>
+                <button class="header-btn" id="who-btn">Qui est qui</button>
+                <button class="header-btn" id="sound-btn">🔊</button>
+            </div>
+        </header>
+
+        <div id="content"></div>
+    </div>
+
+    <!-- Memo Pad Popup -->
+    <div class="popup-overlay" id="memo-popup">
+        <div class="popup">
+            <button class="popup-close" id="memo-close">×</button>
+            <h2>Bloc-notes</h2>
+            <div class="memo-section">
+                <h3>Indicateurs</h3>
+                <div class="metrics" id="metrics-display"></div>
+            </div>
+            <div class="memo-section">
+                <h3>Dossiers</h3>
+                <div class="issues-list" id="issues-display"></div>
+            </div>
+            <div class="memo-section">
+                <h3>Mots-clés</h3>
+                <div class="keywords-list" id="keywords-display">Aucun pour l'instant</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Who's Who Popup -->
+    <div class="popup-overlay" id="who-popup">
+        <div class="popup">
+            <button class="popup-close" id="who-close">×</button>
+            <h2>Qui est qui</h2>
+            <div class="who-content">
+                <p><strong>Armand Alprèves :</strong> négociateur en chef de la Commission européenne</p>
+                <p><strong>Bill Appleby :</strong> présentateur de l'émission de la BBC <em>Now Then</em></p>
+                <p><strong>Jay Arthur :</strong> ministre de la Santé</p>
+                <p><strong>Leslie Barkwell :</strong> ministre du Commerce international</p>
+                <p><strong>Ron Beardsley :</strong> directeur de cabinet du 10 Downing Street</p>
+                <p><strong>Dave Deadpool :</strong> stratège en chef des États-Unis</p>
+                <p><strong>Dennis Dent :</strong> ministre chargé de la Sortie de l'UE</p>
+                <p><strong>Amelia Dimple :</strong> ministre de l'Environnement</p>
+                <p><strong>Harvey Doggerbank :</strong> président du Comité de 1922</p>
+                <p><strong>Bob Fobber :</strong> chef des Libéraux-Démocrates</p>
+                <p><strong>Willy Franjeboom :</strong> négociateur en chef du Parlement européen</p>
+                <p><strong>Colin Fungale :</strong> ancien leader d'UKIP</p>
+                <p><strong>Crispin Gorm :</strong> procureur général</p>
+                <p><strong>Ingrid Käsen :</strong> chancelière d'Allemagne</p>
+                <p><strong>Yalayip Kulübe :</strong> président de la Turquie</p>
+                <p><strong>Jonathan Leonine :</strong> ancien ténor du Parti conservateur</p>
+                <p><strong>Douglas Mac :</strong> président du Conseil européen</p>
+                <p><strong>Martin Mugglemore :</strong> présentateur de l'émission télévisée <em>Feeding Time</em></p>
+                <p><strong>Gervais Noysom-Reek :</strong> député conservateur d'arrière-ban</p>
+                <p><strong>Bob Owlbear :</strong> chef adjoint de l'opposition</p>
+                <p><strong>Jaume Pandillero :</strong> président des Philippines</p>
+                <p><strong>Kirstin Pike :</strong> Première ministre d'Écosse</p>
+                <p><strong>Lemmi Puukaasu :</strong> Premier ministre de Finlande</p>
+                <p><strong>Tiffany Rufus :</strong> ministre de l'Intérieur</p>
+                <p><strong>Barry Scraggle :</strong> chef de l'opposition</p>
+                <p><strong>Chloe Stoat :</strong> ministre des Entreprises</p>
+                <p><strong>Alan Stollard :</strong> chancelier de l'Échiquier</p>
+                <p><strong>Bill Strait :</strong> doyen de la Chambre</p>
+                <p><strong>Peter Strewel :</strong> ministre des Affaires étrangères</p>
+                <p><strong>Jean-Jacques Terlamen :</strong> président de la Commission européenne</p>
+                <p><strong>Thomas Tode :</strong> éminent militant pro-Leave</p>
+                <p><strong>Terri Trough :</strong> attachée de presse du 10 Downing Street</p>
+                <p><strong>Dumpster P Windrip :</strong> président des États-Unis</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Game sections data
+        const SECTIONS = 

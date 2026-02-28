@@ -1,0 +1,779 @@
+
+        // All possible issues in the game
+        const ALL_ISSUES = [
+            'Négociations commerciales UE',
+            'Facture de sortie',
+            'Élections générales',
+            'Immigration',
+            'Accords commerciaux internationaux',
+            'Stratégie de négociation',
+            'Le NHS',
+            'Droits de résidence',
+            'Second référendum européen',
+            'Sécurité et Défense'
+        ];
+
+        // Game state
+        let gameState = {
+            currentSection: '1',
+            keywords: [],
+            items: [],
+            boxes: {},
+            metrics: {
+                Authority: 52,
+                Economy: 52,
+                Goodwill: 52,
+                Popularity: 52
+            },
+            soundEnabled: true
+        };
+
+        // Sound
+        const clickSound = new Audio('sounds/click.wav');
+
+        function playSound() {
+            if (gameState.soundEnabled) {
+                clickSound.currentTime = 0;
+                clickSound.play().catch(() => {});
+            }
+        }
+
+        // Initialize game
+        function init() {
+            registerServiceWorker();
+            loadGame();
+            showStartScreen();
+            setupEventListeners();
+        }
+
+        function registerServiceWorker() {
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('sw.js');
+            }
+        }
+
+        function setupEventListeners() {
+            document.getElementById('memo-btn').addEventListener('click', () => {
+                playSound();
+                openMemoPad();
+            });
+            document.getElementById('reset-btn').addEventListener('click', () => {
+                playSound();
+                if (confirm('Voulez-vous vraiment recommencer la partie ?')) {
+                    resetGame();
+                    renderSection('1');
+                }
+            });
+            document.getElementById('who-btn').addEventListener('click', () => {
+                playSound();
+                openWhosWho();
+            });
+            document.getElementById('sound-btn').addEventListener('click', () => {
+                gameState.soundEnabled = !gameState.soundEnabled;
+                document.getElementById('sound-btn').textContent = gameState.soundEnabled ? '🔊' : '🔇';
+                playSound();
+                saveGame();
+            });
+            document.getElementById('memo-close').addEventListener('click', () => {
+                playSound();
+                closeMemoPad();
+            });
+            document.getElementById('who-close').addEventListener('click', () => {
+                playSound();
+                closeWhosWho();
+            });
+            document.getElementById('memo-popup').addEventListener('click', (e) => {
+                if (e.target.id === 'memo-popup') {
+                    playSound();
+                    closeMemoPad();
+                }
+            });
+            document.getElementById('who-popup').addEventListener('click', (e) => {
+                if (e.target.id === 'who-popup') {
+                    playSound();
+                    closeWhosWho();
+                }
+            });
+        }
+
+        function showStartScreen() {
+            document.getElementById('header').style.display = 'none';
+            const hasProgress = localStorage.getItem('canYouBrexit_save') !== null;
+            
+            // Check if the save represents actual progress (not just a fresh/reset state)
+            let hasValidProgress = false;
+            if (hasProgress) {
+                const saved = JSON.parse(localStorage.getItem('canYouBrexit_save'));
+                // Valid progress means: not at section 1, OR has keywords/items/boxes, OR metrics changed
+                hasValidProgress = saved.currentSection !== '1' ||
+                                   saved.keywords.length > 0 ||
+                                   saved.items.length > 0 ||
+                                   Object.keys(saved.boxes).length > 0 ||
+                                   saved.metrics.Authority !== 52 ||
+                                   saved.metrics.Economy !== 52 ||
+                                   saved.metrics.Goodwill !== 52 ||
+                                   saved.metrics.Popularity !== 52;
+            }
+            
+            const content = document.getElementById('content');
+            content.innerHTML = `
+                <div id="start-screen">
+                    <img src="images/title.jpg" alt="Brexit : saurez-vous sauver le Royaume-Uni ?">
+                    <button id="new-game-btn">Nouvelle partie</button>
+                    ${hasProgress ? `<button id="resume-btn" ${!hasValidProgress ? 'disabled style="opacity: 0.5; cursor: not-allowed;"' : ''}>Reprendre</button>` : ''}
+                </div>
+            `;
+
+            document.getElementById('new-game-btn').addEventListener('click', () => {
+                playSound();
+                startNewGame();
+            });
+            
+            if (hasProgress && hasValidProgress) {
+                document.getElementById('resume-btn').addEventListener('click', () => {
+                    playSound();
+                    resumeGame();
+                });
+            }
+        }
+
+        function startNewGame() {
+            resetGame();
+            document.getElementById('header').style.display = 'flex';
+            renderSection('1');
+        }
+
+        function resumeGame() {
+            document.getElementById('header').style.display = 'flex';
+            renderSection(gameState.currentSection);
+        }
+
+        function resetGame() {
+            gameState = {
+                currentSection: '1',
+                keywords: [],
+                items: [],
+                boxes: {},
+                metrics: {
+                    Authority: 52,
+                    Economy: 52,
+                    Goodwill: 52,
+                    Popularity: 52
+                },
+                soundEnabled: gameState.soundEnabled
+            };
+            saveGame();
+        }
+
+        function saveGame() {
+            localStorage.setItem('canYouBrexit_save', JSON.stringify(gameState));
+        }
+
+        function loadGame() {
+            const saved = localStorage.getItem('canYouBrexit_save');
+            if (saved) {
+                gameState = JSON.parse(saved);
+            }
+        }
+
+        // Condition evaluation
+        function evaluateCondition(condition) {
+            condition = condition.trim();
+
+            // Handle OR
+            if (condition.includes(' OR ')) {
+                const parts = condition.split(' OR ');
+                return parts.some(part => evaluateCondition(part.trim()));
+            }
+
+            // Handle AND
+            if (condition.includes(' AND ')) {
+                const parts = condition.split(' AND ');
+                return parts.every(part => evaluateCondition(part.trim()));
+            }
+
+            // Keyword check
+            const kwMatch = condition.match(/^(!?)keyword:(.+)$/);
+            if (kwMatch) {
+                const hasKeyword = gameState.keywords.includes(kwMatch[2]);
+                return kwMatch[1] ? !hasKeyword : hasKeyword;
+            }
+
+            // Item check
+            const itemMatch = condition.match(/^(!?)item:(.+)$/);
+            if (itemMatch) {
+                const hasItem = gameState.items.includes(itemMatch[2]);
+                return itemMatch[1] ? !hasItem : hasItem;
+            }
+
+            // Box check
+            const boxMatch = condition.match(/^(!?)box:(.+)$/);
+            if (boxMatch) {
+                const hasBox = gameState.boxes[boxMatch[2]] === true;
+                return boxMatch[1] ? !hasBox : hasBox;
+            }
+
+            // Metric comparison
+            const metricMatch = condition.match(/^(Authority|Economy|Goodwill|Popularity)(>=|<=|>|<|=)(\d+)$/);
+            if (metricMatch) {
+                const value = gameState.metrics[metricMatch[1]];
+                const target = parseInt(metricMatch[3]);
+                switch (metricMatch[2]) {
+                    case '>=': return value >= target;
+                    case '<=': return value <= target;
+                    case '>': return value > target;
+                    case '<': return value < target;
+                    case '=': return value === target;
+                }
+            }
+
+            return false;
+        }
+
+        // Apply effect
+        function applyEffect(effect) {
+            effect = effect.trim();
+
+            // Get keyword
+            const getKWMatch = effect.match(/^getKW:(.+)$/);
+            if (getKWMatch && !gameState.keywords.includes(getKWMatch[1])) {
+                gameState.keywords.push(getKWMatch[1]);
+                return;
+            }
+
+            // Lose keyword
+            const loseKWMatch = effect.match(/^loseKW:(.+)$/);
+            if (loseKWMatch) {
+                gameState.keywords = gameState.keywords.filter(kw => kw !== loseKWMatch[1]);
+                return;
+            }
+
+            // Get item
+            const getItemMatch = effect.match(/^getItem:(.+)$/);
+            if (getItemMatch && !gameState.items.includes(getItemMatch[1])) {
+                gameState.items.push(getItemMatch[1]);
+                return;
+            }
+
+            // Lose item
+            const loseItemMatch = effect.match(/^loseItem:(.+)$/);
+            if (loseItemMatch) {
+                gameState.items = gameState.items.filter(item => item !== loseItemMatch[1]);
+                return;
+            }
+
+            // Tick box
+            const tickMatch = effect.match(/^tick:(.+)$/);
+            if (tickMatch) {
+                const boxId = tickMatch[1];
+                if (boxId.endsWith('.next')) {
+                    // Find next available box
+                    const section = boxId.replace('.next', '');
+                    let num = 1;
+                    while (gameState.boxes[`${section}.box${num}`]) {
+                        num++;
+                    }
+                    gameState.boxes[`${section}.box${num}`] = true;
+                } else {
+                    gameState.boxes[boxId] = true;
+                }
+                return;
+            }
+
+            // Untick box
+            const untickMatch = effect.match(/^untick:(.+)$/);
+            if (untickMatch) {
+                delete gameState.boxes[untickMatch[1]];
+                return;
+            }
+
+            // Metric change
+            const metricMatch = effect.match(/^(Authority|Economy|Goodwill|Popularity)([+-])(\d+)$/);
+            if (metricMatch) {
+                const metric = metricMatch[1];
+                const change = parseInt(metricMatch[3]) * (metricMatch[2] === '+' ? 1 : -1);
+                gameState.metrics[metric] = Math.max(0, Math.min(100, gameState.metrics[metric] + change));
+                return;
+            }
+        }
+
+        // Parse line for effects
+        function extractEffects(line) {
+            const effects = [];
+            const effectRegex = /\[EFFECT ([^\]]+)\]/g;
+            let match;
+            while ((match = effectRegex.exec(line)) !== null) {
+                effects.push(match[1]);
+            }
+            return effects;
+        }
+
+        // Parse line for condition
+        function extractCondition(line) {
+            const match = line.match(/^\[IF (.+?)\]/);
+            return match ? match[1] : null;
+        }
+
+        // Parse line for ELSEIF
+        function extractElseIf(line) {
+            const match = line.match(/^\[ELSEIF (.+?)\]/);
+            return match ? match[1] : null;
+        }
+
+        // Check if line is ELSE
+        function isElse(line) {
+            return line.trim().startsWith('[ELSE]');
+        }
+
+        // Extract destination from line
+        function extractDestination(line) {
+            const match = line.match(/►(\d+|CONTINUE)/);
+            return match ? match[1] : null;
+        }
+
+        // Extract button text
+        function extractButtonText(line) {
+            const match = line.match(/"([^"]+)"/);
+            return match ? match[1] : 'Continuer';
+        }
+
+        // Render section
+        function renderSection(sectionNum) {
+            gameState.currentSection = sectionNum;
+            saveGame();
+
+            const section = SECTIONS[sectionNum];
+            if (!section) {
+                document.getElementById('content').innerHTML = '<div class="prose"><p>Section introuvable.</p></div>';
+                return;
+            }
+
+            // Check ROUTES
+            if (section.ROUTES) {
+                const dest = processRoutes(section.ROUTES);
+                if (dest && dest !== 'CONTINUE') {
+                    renderSection(dest);
+                    return;
+                }
+            }
+
+            // Process ONENTER
+            if (section.ONENTER) {
+                processOnEnter(section.ONENTER);
+            }
+
+            // Build content
+            let html = '';
+            let showContent = true;
+
+            // PROSE
+            if (section.PROSE) {
+                html += renderProse(section.PROSE);
+            }
+
+            // REPORT
+            if (section.REPORT) {
+                html += renderReport(section.REPORT);
+            }
+
+            // TOSS
+            if (section.TOSS_ONE) {
+                html += renderToss(section.TOSS_ONE, 1);
+                document.getElementById('content').innerHTML = html;
+                return;
+            }
+
+            if (section.TOSS_TWO) {
+                html += renderToss(section.TOSS_TWO, 2);
+                document.getElementById('content').innerHTML = html;
+                return;
+            }
+
+            // Check GOTO
+            if (section.GOTO) {
+                const gotoResult = processGoto(section.GOTO);
+                if (gotoResult.dest && gotoResult.dest !== 'CONTINUE') {
+                    html += `<div class="options"><button class="option-button" data-dest="${gotoResult.dest}" data-effects='${gotoResult.effects}'>${gotoResult.text}</button></div>`;
+                    document.getElementById('content').innerHTML = html;
+                    attachOptionListeners();
+                    return;
+                } else if (gotoResult.dest === 'CONTINUE' && gotoResult.proseIndex !== null) {
+                    // Continue to next prose block
+                    html += renderProse(section.PROSE.slice(gotoResult.proseIndex));
+                }
+            }
+
+            // COUNT_GOTO
+            if (section.COUNT_GOTO) {
+                const countResult = processCountGoto(section.COUNT_GOTO);
+                html += `<div class="options"><button class="option-button" data-dest="${countResult.dest}" data-effects='${countResult.effects}'>${countResult.text}</button></div>`;
+                document.getElementById('content').innerHTML = html;
+                attachOptionListeners();
+                return;
+            }
+
+            // OPTIONS
+            if (section.OPTIONS) {
+                html += renderOptions(section.OPTIONS);
+            }
+
+            document.getElementById('content').innerHTML = html;
+            attachOptionListeners();
+        }
+
+        function processRoutes(routes) {
+            for (const line of routes) {
+                const condition = extractCondition(line) || extractElseIf(line);
+                
+                if (isElse(line)) {
+                    const dest = extractDestination(line);
+                    const effects = extractEffects(line);
+                    effects.forEach(applyEffect);
+                    return dest;
+                }
+                
+                if (condition) {
+                    if (evaluateCondition(condition)) {
+                        const dest = extractDestination(line);
+                        const effects = extractEffects(line);
+                        effects.forEach(applyEffect);
+                        return dest;
+                    }
+                }
+            }
+            return null;
+        }
+
+        function processOnEnter(onEnter) {
+            for (const line of onEnter) {
+                const condition = extractCondition(line);
+                if (condition) {
+                    if (evaluateCondition(condition)) {
+                        const effects = extractEffects(line);
+                        effects.forEach(applyEffect);
+                    }
+                } else {
+                    const effects = extractEffects(line);
+                    effects.forEach(applyEffect);
+                }
+            }
+        }
+
+        function processGoto(gotoLines) {
+            for (const line of gotoLines) {
+                const condition = extractCondition(line) || extractElseIf(line);
+                
+                if (isElse(line)) {
+                    const dest = extractDestination(line);
+                    const text = extractButtonText(line);
+                    const effects = extractEffects(line);
+                    return { dest, text, effects: JSON.stringify(effects) };
+                }
+                
+                if (condition) {
+                    if (evaluateCondition(condition)) {
+                        const dest = extractDestination(line);
+                        const text = extractButtonText(line);
+                        const effects = extractEffects(line);
+                        return { dest, text, effects: JSON.stringify(effects) };
+                    }
+                }
+            }
+            return { dest: null, text: 'Continuer', effects: '[]' };
+        }
+
+        function processCountGoto(countLines) {
+            let count = 0;
+            let thresholds = [];
+            
+            for (const line of countLines) {
+                // Check if it's a threshold line
+                const thresholdMatch = line.match(/^\[(>=|<=|>|<|=)(\d+)\]/);
+                if (thresholdMatch) {
+                    const op = thresholdMatch[1];
+                    const value = parseInt(thresholdMatch[2]);
+                    const dest = extractDestination(line);
+                    const text = extractButtonText(line);
+                    const effects = extractEffects(line);
+                    thresholds.push({ op, value, dest, text, effects });
+                    continue;
+                }
+                
+                // Check if it's ELSE
+                if (isElse(line)) {
+                    const dest = extractDestination(line);
+                    const text = extractButtonText(line);
+                    const effects = extractEffects(line);
+                    thresholds.push({ op: 'ELSE', dest, text, effects });
+                    continue;
+                }
+                
+                // Otherwise it's a condition to count
+                if (evaluateCondition(line)) {
+                    count++;
+                }
+            }
+            
+            // Find matching threshold
+            for (const threshold of thresholds) {
+                if (threshold.op === 'ELSE') {
+                    return { dest: threshold.dest, text: threshold.text, effects: JSON.stringify(threshold.effects) };
+                }
+                
+                let matches = false;
+                switch (threshold.op) {
+                    case '>=': matches = count >= threshold.value; break;
+                    case '<=': matches = count <= threshold.value; break;
+                    case '>': matches = count > threshold.value; break;
+                    case '<': matches = count < threshold.value; break;
+                    case '=': matches = count === threshold.value; break;
+                }
+                
+                if (matches) {
+                    return { dest: threshold.dest, text: threshold.text, effects: JSON.stringify(threshold.effects) };
+                }
+            }
+            
+            return { dest: gameState.currentSection, text: 'Continuer', effects: '[]' };
+        }
+
+        function renderProse(proseLines) {
+            let html = '<div class="prose">';
+            for (const line of proseLines) {
+                html += `<p>${line}</p>`;
+            }
+            html += '</div>';
+            return html;
+        }
+
+        function renderReport(reportLines) {
+            let html = '<div class="report">';
+            for (const line of reportLines) {
+                html += `<p>${line}</p>`;
+            }
+            html += '</div>';
+            return html;
+        }
+
+        function renderToss(tossLines, numCoins) {
+            let html = '<div class="coin-toss">';
+            html += '<div class="coins">';
+            for (let i = 0; i < numCoins; i++) {
+                html += '<div class="coin" id="coin' + i + '"><img src="images/coin-unflipped.png" alt="Pièce non lancée"></div>';
+            }
+            html += '</div>';
+            html += `<button id="toss-button">${numCoins === 1 ? 'Lancer la pièce' : 'Lancer les pièces'}</button>`;
+            html += '<div class="toss-outcomes" id="toss-outcomes"></div>';
+            html += '</div>';
+            
+            setTimeout(() => {
+                document.getElementById('toss-button').addEventListener('click', () => {
+                    playSound();
+                    performToss(tossLines, numCoins);
+                });
+            }, 100);
+            
+            return html;
+        }
+
+        function performToss(tossLines, numCoins) {
+            const results = [];
+            for (let i = 0; i < numCoins; i++) {
+                const isHeads = Math.random() < 0.5;
+                results.push(isHeads);
+                const coin = document.getElementById('coin' + i);
+                const img = coin.querySelector('img');
+                img.src = isHeads ? 'images/coin-heads.png' : 'images/coin-tails.png';
+                img.alt = isHeads ? 'Face' : 'Pile';
+            }
+            
+            document.getElementById('toss-button').style.display = 'none';
+            
+            // Determine outcome
+            let outcomeKey;
+            if (numCoins === 1) {
+                outcomeKey = results[0] ? '[HEAD]' : '[TAIL]';
+            } else {
+                const heads = results.filter(r => r).length;
+                if (heads === 2) outcomeKey = '[BOTH HEADS]';
+                else if (heads === 0) outcomeKey = '[BOTH TAILS]';
+                else outcomeKey = '[HEAD AND TAIL]';
+            }
+            
+            // Find matching outcome
+            for (const line of tossLines) {
+                if (line.startsWith(outcomeKey)) {
+                    const text = extractButtonText(line);
+                    const dest = extractDestination(line);
+                    const effects = extractEffects(line);
+                    
+                    const outcomesDiv = document.getElementById('toss-outcomes');
+                    outcomesDiv.innerHTML = `<button class="option-button" data-dest="${dest}" data-effects='${JSON.stringify(effects)}'>${text}</button>`;
+                    attachOptionListeners();
+                    break;
+                }
+            }
+        }
+
+        function renderOptions(optionLines) {
+            let html = '<div class="options">';
+            let i = 0;
+            
+            while (i < optionLines.length) {
+                const line = optionLines[i];
+                const condition = extractCondition(line);
+                const elseIfCondition = extractElseIf(line);
+                
+                if (elseIfCondition) {
+                    // This is an ELSEIF - should have been handled in previous IF chain
+                    // Skip it (this shouldn't happen if logic is correct)
+                    i++;
+                    continue;
+                }
+                
+                if (condition) {
+                    // Check if next line is ELSEIF or ELSE (indicating a chain)
+                    const nextLine = i + 1 < optionLines.length ? optionLines[i + 1] : null;
+                    const isChain = nextLine && (nextLine.includes('[ELSEIF') || nextLine.includes('[ELSE]'));
+                    
+                    if (isChain) {
+                        // Handle as IF/ELSEIF/ELSE chain (mutually exclusive)
+                        let foundMatch = false;
+                        let j = i;
+                        
+                        while (j < optionLines.length) {
+                            const currentLine = optionLines[j];
+                            const currentCond = extractCondition(currentLine) || extractElseIf(currentLine);
+                            
+                            if (currentCond) {
+                                if (evaluateCondition(currentCond)) {
+                                    // Render this option
+                                    const text = extractButtonText(currentLine);
+                                    const dest = extractDestination(currentLine);
+                                    const effects = extractEffects(currentLine);
+                                    html += `<button class="option-button" data-dest="${dest}" data-effects='${JSON.stringify(effects)}'>${text}</button>`;
+                                    foundMatch = true;
+                                    break;
+                                }
+                            } else if (isElse(currentLine)) {
+                                // ELSE - render this
+                                const text = extractButtonText(currentLine);
+                                const dest = extractDestination(currentLine);
+                                const effects = extractEffects(currentLine);
+                                html += `<button class="option-button" data-dest="${dest}" data-effects='${JSON.stringify(effects)}'>${text}</button>`;
+                                foundMatch = true;
+                                break;
+                            } else {
+                                // Not part of IF chain, break
+                                break;
+                            }
+                            
+                            j++;
+                            
+                            // Check if next line continues the chain
+                            if (j < optionLines.length) {
+                                const nextLine = optionLines[j];
+                                if (!nextLine.includes('[ELSEIF') && !nextLine.includes('[ELSE]')) {
+                                    break;
+                                }
+                            }
+                        }
+                        
+                        // Skip all lines in this IF/ELSEIF/ELSE chain
+                        i = j + 1;
+                    } else {
+                        // Independent IF condition - evaluate and show/hide independently
+                        if (evaluateCondition(condition)) {
+                            const text = extractButtonText(line);
+                            const dest = extractDestination(line);
+                            const effects = extractEffects(line);
+                            html += `<button class="option-button" data-dest="${dest}" data-effects='${JSON.stringify(effects)}'>${text}</button>`;
+                        }
+                        i++;
+                    }
+                } else if (isElse(line)) {
+                    // Standalone ELSE (shouldn't happen, but handle it)
+                    const text = extractButtonText(line);
+                    const dest = extractDestination(line);
+                    const effects = extractEffects(line);
+                    html += `<button class="option-button" data-dest="${dest}" data-effects='${JSON.stringify(effects)}'>${text}</button>`;
+                    i++;
+                } else {
+                    // Regular option (no condition)
+                    const text = extractButtonText(line);
+                    const dest = extractDestination(line);
+                    const effects = extractEffects(line);
+                    html += `<button class="option-button" data-dest="${dest}" data-effects='${JSON.stringify(effects)}'>${text}</button>`;
+                    i++;
+                }
+            }
+            
+            html += '</div>';
+            return html;
+        }
+
+        function attachOptionListeners() {
+            document.querySelectorAll('.option-button').forEach(button => {
+                button.addEventListener('click', () => {
+                    playSound();
+                    const dest = button.dataset.dest;
+                    const effects = JSON.parse(button.dataset.effects || '[]');
+                    effects.forEach(applyEffect);
+                    saveGame();
+                    renderSection(dest);
+                });
+            });
+        }
+
+        // Memo Pad
+        function openMemoPad() {
+            updateMemoPad();
+            document.getElementById('memo-popup').classList.add('active');
+        }
+
+        function closeMemoPad() {
+            document.getElementById('memo-popup').classList.remove('active');
+        }
+
+        function updateMemoPad() {
+            // Metrics
+            const metricsDiv = document.getElementById('metrics-display');
+            metricsDiv.innerHTML = `
+                <div class="metric"><span class="metric-name">Autorité :</span> ${gameState.metrics.Authority}%</div>
+                <div class="metric"><span class="metric-name">Économie :</span> ${gameState.metrics.Economy}%</div>
+                <div class="metric"><span class="metric-name">Bienveillance :</span> ${gameState.metrics.Goodwill}%</div>
+                <div class="metric"><span class="metric-name">Popularité :</span> ${gameState.metrics.Popularity}%</div>
+            `;
+            
+            // Issues
+            const issuesDiv = document.getElementById('issues-display');
+            issuesDiv.innerHTML = ALL_ISSUES.map(issue => {
+                const completed = gameState.items.includes(issue);
+                return `<div class="issue-item ${completed ? 'completed' : ''}">${issue} ${completed ? '✓' : ''}</div>`;
+            }).join('');
+            
+            // Keywords
+            const keywordsDiv = document.getElementById('keywords-display');
+            if (gameState.keywords.length === 0) {
+                keywordsDiv.innerHTML = 'Aucun pour l\u2019instant';
+            } else {
+                keywordsDiv.innerHTML = gameState.keywords.sort().map(kw => 
+                    `<span class="keyword-item">${kw}</span>`
+                ).join('');
+            }
+        }
+
+        // Who's Who
+        function openWhosWho() {
+            document.getElementById('who-popup').classList.add('active');
+        }
+
+        function closeWhosWho() {
+            document.getElementById('who-popup').classList.remove('active');
+        }
+
+        // Start
+        init();
+    </script>
+</body>
+</html>
