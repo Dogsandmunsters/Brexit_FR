@@ -111,9 +111,9 @@
   },
   "9": {
     "PROSE": [
-      "Strewel was expecting you to fight him on either a Leave or Remain ticket, both of which he was prepared for. The one tactic he never anticipated was that you would refute the factious politics of the last three years.",
-      "The British people, by nature moderate and conciliatory, seize at your proposals as the life preserver that could save the country from going under. More importantly, the Tory party members who will decide this contest see which way the wind is blowing. Polls suggest that the less extreme of them are beginning to appreciate the wisdom of supporting a concordant solution, without which the party was always in danger of winning a Pyrrhic victory.",
-      "You have Strewel on the ropes. Can you finish him off?"
+      "Strewel s'attendait à ce que vous l'affrontiez sur un programme Leave ou Remain, deux scénarios auxquels il était préparé. La seule tactique qu'il n'avait jamais anticipée était que vous rejetteriez la politique factieuse des trois dernières années.",
+      "Le peuple britannique, modéré et conciliant par nature, s'accroche à vos propositions comme à la bouée de sauvetage qui pourrait empêcher le pays de sombrer. Plus important encore, les adhérents du Parti conservateur qui trancheront ce scrutin sentent le vent tourner. Les sondages suggèrent que les moins extrémistes d'entre eux commencent à percevoir la sagesse d'un soutien à une solution concordante, sans laquelle le parti risquait fort de ne remporter qu'une victoire à la Pyrrhus.",
+      "Vous tenez Strewel dans les cordes. Pouvez-vous lui porter le coup de grâce ?"
     ],
     "GOTO": [
       "[IF Popularity>=53] \"Continuer\" ►519",
@@ -125,12 +125,12 @@
       "[EFFECT getItem:Second référendum européen]"
     ],
     "PROSE": [
-      "'Ever had a near miss, Wilkins?' you ask as he draws back the curtains to reveal a sky of dazzling sunlight.",
-      "'I got four out of five numbers on the Euromillions once, only it turned out to be an old ticket.'",
-      "'I mean a near disaster. A piano crashing to the pavement two steps behind you. A gas leak, only you were woken by the cat. Escaping death by a whisker, so to speak.'",
-      "'Can't say I have, Prime Minister.'",
-      "'This is like that. I feel as though I'd just driven through a ten-car pile up, burning wreckage and screaming on all sides, only I sailed right through and came out without a scratch. I'm living a charmed life, Wilkins. Untainted by a campaign that could have ended my career.'",
-      "He opens the wardrobe. 'On with the job, then?'"
+      "« Vous est-il déjà arrivé de frôler la catastrophe, Wilkins ? » demandez-vous tandis qu'il tire les rideaux, révélant un ciel d'un éclat éblouissant.",
+      "« J'ai eu quatre bons numéros sur cinq à l'Euromillions, une fois, sauf que c'était un vieux ticket. »",
+      "« Je veux dire un désastre évité de justesse. Un piano qui s'écrase sur le trottoir deux pas derrière vous. Une fuite de gaz, mais le chat vous a réveillé à temps. Échapper à la mort d'un cheveu, pour ainsi dire. »",
+      "« Je ne peux pas dire que cela me soit arrivé, Premier ministre. »",
+      "« C'est exactement ça. J'ai l'impression d'avoir traversé un carambolage de dix voitures, des carcasses en flammes et des hurlements de tous côtés, et d'en être sorti sans une égratignure. Je mène une vie enchantée, Wilkins. Préservé d'une campagne qui aurait pu mettre fin à ma carrière. »",
+      "Il ouvre la penderie. « Alors, on s'y remet ? »"
     ],
     "OPTIONS": [
       "[OPTION] \"Continuer\" ►450"
@@ -138,17 +138,17 @@
   },
   "11": {
     "PROSE": [
-      "'Your real Death Star there is the whole legal issue of international trade talks. Then there's the shaky position of existing trade deals, or those that are being negotiated by the EU at the moment. We might not inherit those automatically. There's the time it takes to negotiate trade deals, too – we can move faster than a monolithic bloc like the EU, but we've got to do lots of bitty deals and meanwhile the pressure is mounting and the national debt is climbing.'",
-      "'I don't think your father would agree with you on any of those points.'",
-      "'You're kidding, right? He knows all right. Haven't you noticed that glassy look in his eyes? It's fear. Constant, blood-curdling, ball-shrivelling fear.'",
-      "'Oh, come on. Britain has faced worse threats before.'",
-      "'The Dunkirk spirit, yeah? We're all in it together? Except those voters who wanted their country back aren't going to like the country they actually get.'"
+      "« Votre véritable Étoile de la Mort, c'est toute la question juridique des négociations commerciales internationales. Il y a aussi la fragilité des accords commerciaux existants, ou de ceux que l'UE est en train de négocier en ce moment. Nous ne les hériterons pas forcément de façon automatique. Et puis il y a le temps qu'il faut pour négocier des accords commerciaux – nous pouvons aller plus vite qu'un bloc monolithique comme l'UE, mais nous devons conclure plein de petits accords et pendant ce temps la pression monte et la dette nationale s'alourdit. »",
+      "« Je ne pense pas que votre père serait d'accord avec vous sur aucun de ces points. »",
+      "« Vous plaisantez ? Il le sait très bien. Vous n'avez pas remarqué ce regard vitreux dans ses yeux ? C'est la peur. Une peur constante, à vous glacer le sang, à vous retourner les tripes. »",
+      "« Allons, allons. La Grande-Bretagne a affronté des menaces bien pires. »",
+      "« L'esprit de Dunkerque, c'est ça ? Tous dans le même bateau ? Sauf que ces électeurs qui voulaient retrouver leur pays ne vont pas aimer celui qu'ils vont effectivement obtenir. »"
     ],
     "OPTIONS": [
-      "[OPTION] \"'What do you mean by that?'\" ►224",
-      "[OPTION] \"'What legal issues are you talking about?'\" ►211",
-      "[OPTION] \"'I don't think it will take too long to hammer out a few simple trade agreements.'\" ►198",
-      "[OPTION] \"'Let's not focus on the negative.'\" ►700"
+      "[OPTION] \"« Que voulez-vous dire par là ? »\" ►224",
+      "[OPTION] \"« De quels problèmes juridiques parlez-vous ? »\" ►211",
+      "[OPTION] \"« Je ne pense pas qu'il faudra très longtemps pour conclure quelques accords commerciaux simples. »\" ►198",
+      "[OPTION] \"« Évitons de nous concentrer sur le négatif. »\" ►700"
     ]
   },
   "12": {
