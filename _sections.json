@@ -1277,8 +1277,8 @@
       "Votre seul avantage est que Fungale n'a pas eu beaucoup de temps pour se constituer un soutien au sein du groupe parlementaire. Vous devez tenter de le dépeindre comme le masque ricanant derrière le visage tordu de haine du populisme d'extrême droite."
     ],
     "GOTO": [
-      "[IF Authority>=61] \"No sweat\" ►708",
-      "[ELSE] \"Do your best\" ►283"
+      "[IF Authority>=61] \"Les doigts dans le nez\" ►708",
+      "[ELSE] \"Faites de votre mieux\" ►283"
     ]
   },
   "94": {
@@ -1287,8 +1287,8 @@
       "Rappeler aux députés votre autorité est toujours risqué. Ils pourraient s'imaginer qu'ils auraient la vie plus facile sous Strewel. Surtout, pouvez-vous les convaincre que vous êtes la personne idoine pour superviser le Brexit ?"
     ],
     "GOTO": [
-      "[IF keyword:FOG OR keyword:LEAF] \"But you are!\" ►534",
-      "[ELSE] \"It'll be tough\" ►565"
+      "[IF keyword:FOG OR keyword:LEAF] \"Et vous l'êtes !\" ►534",
+      "[ELSE] \"Ce sera difficile\" ►565"
     ]
   },
   "95": {
@@ -1374,8 +1374,8 @@
   },
   "102": {
     "PROSE": [
-      "You know it's hollow, this fighting talk, and Bill Appleby knows it too. His lip curls in scorn. 'You gonna bark all day, little doggie?'",
-      "Wait. No. He wouldn't say that. He didn't. You can't even remember what he said. You panicked. The rest of the interview passed in a blur and now you lie tossing in your bed, half awake. In twelve hours the next round of voting will take place, but in the sweat-soaked chill of the night you already know the result."
+      "Vous savez que c'est creux, ce discours combatif, et Bill Appleby le sait aussi. Sa lèvre se retrousse de mépris. « Tu vas aboyer toute la journée, petit toutou ? »",
+      "Attendez. Non. Il ne dirait pas ça. Il ne l'a pas dit. Vous ne vous souvenez même plus de ce qu'il a dit. Vous avez paniqué. Le reste de l'interview s'est passé dans un brouillard et maintenant vous vous retournez dans votre lit, à moitié éveillé. Dans douze heures, le prochain tour de scrutin aura lieu, mais dans le froid moite et angoissant de la nuit, vous connaissez déjà le résultat."
     ],
     "OPTIONS": [
       "[OPTION] \"Continuer\" ►377"
@@ -1383,17 +1383,17 @@
   },
   "103": {
     "PROSE": [
-      "Who better than Thomas Tode, who stood shoulder to shoulder with Strewel in front of every poster-sized falsehood put out by the Leave campaign, from the claim that Turkey was about to join the EU – and by implication send hordes of Turks flooding through British ports – to the exaggerated figure for Britain's EU membership painted along the side of their battle bus.",
-      "After the referendum, Tode surprised everybody – most especially Strewel himself – by knifing his erstwhile colleague in the back. At the time he said it was because he had suddenly realized that Strewel was incapable of unifying the party. Of course, everybody else already knew that, and probably only Tode still thinks that you have to unite the Tory party in order to lead it.",
-      "'Things a bit strained between you and Peter, eh?' you ask Tode, having cornered him coming out of a select committee meeting. 'Some bad blood there.'",
-      "'That was my fault for being unclear,' he says gnomishly.",
-      "'He hasn't changed in the last few years, has he? Still opens his mouth only to stick his foot in it. Divisive. Lazy. Badly organized.'",
-      "'You want my help to see off his leadership challenge.'",
-      "There's the steel-trap mind you were looking for. What will you say to convince him?"
+      "Qui de mieux que Thomas Tode, qui s'est tenu épaule contre épaule avec Strewel devant chaque mensonge format affiche de la campagne du Leave, de l'affirmation que la Turquie était sur le point de rejoindre l'UE – et implicitement d'envoyer des hordes de Turcs déferler dans les ports britanniques – au chiffre gonflé de la cotisation européenne de la Grande-Bretagne peint sur le flanc de leur bus de campagne.",
+      "Après le référendum, Tode a surpris tout le monde – et surtout Strewel lui-même – en poignardant son ancien camarade dans le dos. À l'époque, il avait dit que c'était parce qu'il avait soudain réalisé que Strewel était incapable d'unifier le parti. Bien sûr, tout le monde le savait déjà, et probablement seul Tode pense encore qu'il faut unir le Parti conservateur pour le diriger.",
+      "« Les choses sont un peu tendues entre vous et Peter, non ? demandez-vous à Tode, l'ayant coincé à la sortie d'une réunion de commission. Il y a du mauvais sang entre vous. »",
+      "« C'est de ma faute pour avoir manqué de clarté », dit-il d'un air gnomique.",
+      "« Il n'a pas changé ces dernières années, n'est-ce pas ? Il ouvre toujours la bouche uniquement pour y mettre les pieds. Clivant. Paresseux. Mal organisé. »",
+      "« Vous voulez mon aide pour contrer sa candidature à la direction. »",
+      "Voilà l'esprit acéré que vous cherchiez. Que lui direz-vous pour le convaincre ?"
     ],
     "OPTIONS": [
-      "[OPTION] \"'You ought to have a better Cabinet position, Thomas. Something closer to the head of the table.'\" ►402",
-      "[OPTION] \"'My real worry is that Peter just isn't as committed to Brexit as we are.'\" ►861"
+      "[OPTION] \"« Vous méritez un meilleur poste au Cabinet, Thomas. Quelque chose de plus proche du haut de la table. »\" ►402",
+      "[OPTION] \"« Ce qui m'inquiète vraiment, c'est que Peter n'est pas aussi engagé dans le Brexit que nous. »\" ►861"
     ]
   },
   "104": {
@@ -1403,22 +1403,22 @@
       "[EFFECT getItem:Facture de sortie]"
     ],
     "PROSE": [
-      "The court's decision is an eye-watering €60 billion. It's not only a blow to the Treasury but to you personally, as the press are blaming you for handling the matter incompetently."
+      "La décision du tribunal s'élève au montant vertigineux de 60 milliards d'euros. C'est non seulement un coup pour le Trésor mais aussi pour vous personnellement, car la presse vous accuse d'avoir géré l'affaire de façon incompétente."
     ],
     "REPORT": [
-      "<strong>-5% Authority</strong>: there's a sense in the party that you're making this up as you go along.",
-      "<strong>-10% Economy</strong>: this is going to leave a big dent in Britain's finances."
+      "<strong>-5 % Autorité</strong> : on a le sentiment au sein du parti que vous improvisez au fur et à mesure.",
+      "<strong>-10 % Économie</strong> : cela va laisser un gros trou dans les finances britanniques."
     ],
     "OPTIONS": [
-      "[OPTION] \"At least that's one less thing to think about\" ►400"
+      "[OPTION] \"C'est au moins un souci de moins\" ►400"
     ]
   },
   "105": {
     "PROSE": [
-      "The leadership contest now pits you against three heavyweights of the party: Tiffany Rufus, the Home Secretary; Alan Stollard, the Chancellor of the Exchequer; and Peter Strewel, the clownish but formidably popular Foreign Secretary.",
-      "'Which of them should I concentrate my fire on? Which of them is the most dangerous?'",
-      "'Prime Minister,' says your chief of staff. 'Those might be two different questions.'",
-      "As you approach the next round of voting, which of your opponents will you single out to attack?"
+      "Le concours pour la direction vous oppose désormais à trois poids lourds du parti : Tiffany Rufus, la ministre de l'Intérieur ; Alan Stollard, le chancelier de l'Échiquier ; et Peter Strewel, le bouffon mais redoutablement populaire ministre des Affaires étrangères.",
+      "« Sur lequel d'entre eux dois-je concentrer mon tir ? Lequel est le plus dangereux ? »",
+      "« Premier ministre, dit votre directeur de cabinet. Ce sont peut-être deux questions différentes. »",
+      "À l'approche du prochain tour de scrutin, lequel de vos adversaires ciblerez-vous en priorité ?"
     ],
     "OPTIONS": [
       "[OPTION] \"Tiffany Rufus\" ►751",
@@ -1428,35 +1428,35 @@
   },
   "106": {
     "PROSE": [
-      "True, a second referendum could backfire on you. However carefully it was phrased, it would leave a yawning chasm of ambiguity to be filled by whichever party mustered the most cynical, opportunistic and hollow arguments."
+      "Il est vrai qu'un second référendum pourrait se retourner contre vous. Aussi soigneusement qu'il soit formulé, il laisserait un gouffre béant d'ambiguïté à combler par le parti capable de rassembler les arguments les plus cyniques, opportunistes et creux."
     ],
     "OPTIONS": [
-      "[OPTION] \"Better not, then\" ►79",
-      "[OPTION] \"You're confident you have the qualities needed. Go for it\" ►845"
+      "[OPTION] \"Mieux vaut s'abstenir, alors\" ►79",
+      "[OPTION] \"Vous avez confiance en vos qualités. Foncez\" ►845"
     ]
   },
   "107": {
     "PROSE": [
-      "It comes out that in an unguarded moment you let slip to Chloe Stoat, the Business minister, that you were opposed to Brexit.",
-      "'But why, Prime Minister?' says your press secretary, almost in tears.",
-      "'I also told her to keep it buttoned as I needed to weed out the nutcases first. So what does she do? Wait till the biggest fruitbat in the Party is standing for the leadership, and then blurt it all out.'",
-      "'Speaking of which…' Ron Beardsley points at the television. You turn up the sound.",
-      "'I would characterize this as a betrayal equivalent to the Albigensian heresy ,' Noysom-Reek is telling a reporter. 'Does the Prime Minister spit on the cross? The people's will is being treated with contempt.'",
-      "'Meanwhile,' says Terri Trough, scanning a website on her phone, 'Ms Rufus is saying you're a political weathervane.'",
-      "You call an impromptu press conference to put your side of the story. What do you tell them?"
+      "Il s'avère que dans un moment d'inattention, vous avez laissé échapper devant Chloe Stoat, la ministre des Entreprises, que vous étiez opposé au Brexit.",
+      "« Mais pourquoi, Premier ministre ? dit votre attachée de presse, au bord des larmes. »",
+      "« Je lui ai aussi dit de la boucler car j'avais besoin d'éliminer d'abord les fanatiques. Alors qu'est-ce qu'elle fait ? Elle attend que le plus grand allumé du Parti se présente à la direction, puis elle déballe tout. »",
+      "« En parlant de quoi… » Ron Beardsley désigne la télévision. Vous montez le son.",
+      "« Je qualifierais cela de trahison comparable à l'hérésie albigeoise, déclare Noysom-Reek à un journaliste. Le Premier ministre crache-t-il sur la croix ? La volonté du peuple est traitée avec mépris. »",
+      "« Par ailleurs, dit Terri Trough en parcourant un site sur son téléphone, Mme Rufus vous qualifie de girouette politique. »",
+      "Vous convoquez une conférence de presse impromptue pour donner votre version des faits. Que leur dites-vous ?"
     ],
     "OPTIONS": [
-      "[OPTION] \"'I only said what I did to Mrs Stoat to find out her true colours. Well, she's revealed them now.'\" ►287",
-      "[OPTION] \"'My job all along has been to act in the public interest. When I spoke to Mrs Stoat nearly two years ago, Brexit wasn't looking like a sensible option, but now we're on course for a good outcome.'\" ►461"
+      "[OPTION] \"« Je n'ai dit ce que j'ai dit à Mme Stoat que pour découvrir ses véritables couleurs. Eh bien, elle les a révélées maintenant. »\" ►287",
+      "[OPTION] \"« Mon rôle a toujours été d'agir dans l'intérêt public. Quand j'ai parlé à Mme Stoat il y a près de deux ans, le Brexit ne semblait pas une option raisonnable, mais maintenant nous sommes en bonne voie pour un résultat favorable. »\" ►461"
     ]
   },
   "108": {
     "PROSE": [
-      "Revenues are falling, growth rates stalling, and unemployment is creeping up. Some sectors are already in recession. The ship of state is heading for the reefs of Brexit, and with you at the helm it is ill prepared.",
-      "'BROKEN BREXIT,' some of the newspapers are calling it. What did they expect? They demanded a manure delivery and now they're griping about the stink.",
-      "'Is there an upside?' you ask the Chancellor. 'I can't help thinking that a large part of the referendum result was an anti-austerity vote, and what's coming now is going to make that look like a holiday in Willy Wonka's chocolate factory.'",
-      "He spreads his hands. 'If there's a bright side, it's that an extended recession will probably reduce inequality in Britain. Everyone will be impoverished, naturally, but the richest will flee abroad – or stow their money there, anyway – and the middle classes will have to cut back.'",
-      "Perhaps he's right. You can cling on through the dark days ahead by appealing to the disaffected white working class voters whose rallying cry was a rejection of business, wealth and privilege. The history books may not be so forgiving, but by then you'll be past caring."
+      "Les recettes diminuent, les taux de croissance stagnent et le chômage remonte insidieusement. Certains secteurs sont déjà en récession. Le navire de l'État se dirige vers les récifs du Brexit, et avec vous à la barre, il est mal préparé.",
+      "« BREXIT BRISÉ », titrent certains journaux. À quoi s'attendaient-ils ? Ils ont commandé une livraison de fumier et maintenant ils se plaignent de l'odeur.",
+      "« Y a-t-il un côté positif ? demandez-vous au chancelier de l'Échiquier. Je ne peux m'empêcher de penser qu'une grande part du résultat du référendum était un vote anti-austérité, et que ce qui s'annonce va faire passer ça pour des vacances dans la chocolaterie de Willy Wonka. »",
+      "Il écarte les mains. « S'il y a un bon côté, c'est qu'une récession prolongée réduira probablement les inégalités en Grande-Bretagne. Tout le monde sera appauvri, naturellement, mais les plus riches fuiront à l'étranger – ou y cacheront leur argent, en tout cas – et les classes moyennes devront se serrer la ceinture. »",
+      "Il a peut-être raison. Vous pouvez vous accrocher pendant les jours sombres à venir en faisant appel aux électeurs blancs déclassés de la classe ouvrière dont le cri de ralliement était le rejet des affaires, de la richesse et du privilège. Les livres d'histoire seront peut-être moins indulgents, mais d'ici là, vous n'en aurez plus cure."
     ],
     "OPTIONS": [
       "[OPTION] \"Continuer\" ►210"
@@ -1464,7 +1464,7 @@
   },
   "109": {
     "PROSE": [
-      "You feel that your arguments have helped swing the result, but nothing is certain till the votes are counted. You settle down in front of the television with a glass of milk and a plate of sandwiches and wait to see which way it will go."
+      "Vous sentez que vos arguments ont contribué à infléchir le résultat, mais rien n'est certain tant que les votes ne sont pas comptés. Vous vous installez devant la télévision avec un verre de lait et une assiette de sandwichs pour voir de quel côté les choses pencheront."
     ],
     "TOSS_TWO": [
       "[BOTH HEADS] \"Continuer\" ►403",
@@ -1477,16 +1477,16 @@
       "[EFFECT Popularity-3]"
     ],
     "PROSE": [
-      "You call in the Health Secretary, Jay Arthur. 'As this is an unpopular policy,' you tell him, 'I'm afraid you'll have to head it up.'",
-      "'Er…' You can almost see his mental gears churning as he weighs up his career. 'Of course, Prime Minister. What I thought we could do is dump a load more responsibility onto local surgeries. GPs won't be able to cope, but then we can say that it's their fault for running an inefficient service.'",
-      "'Good.' You'd better watch him. He's displaying all too devious a way of thinking for a stooge."
+      "Vous convoquez le ministre de la Santé, Jay Arthur. « Comme c'est une mesure impopulaire, lui dites-vous, j'ai bien peur que vous deviez la piloter. »",
+      "« Euh… » Vous pouvez presque voir ses engrenages mentaux tourner tandis qu'il pèse le sort de sa carrière. « Bien sûr, Premier ministre. Ce que je pensais, c'est qu'on pourrait transférer un tas de responsabilités supplémentaires aux cabinets médicaux locaux. Les médecins généralistes ne s'en sortiront pas, mais ensuite nous pourrons dire que c'est de leur faute s'ils gèrent un service inefficace. »",
+      "« Bien. » Vous feriez mieux de le surveiller. Il fait preuve d'un esprit un peu trop retors pour un faire-valoir."
     ],
     "REPORT": [
-      "<strong>-3% Popularity</strong>: you can't fool all of the voters, and the smarter ones see through the attempt to blame GPs."
+      "<strong>-3 % Popularité</strong> : vous ne pouvez pas tromper tous les électeurs, et les plus malins voient clair dans la tentative de blâmer les médecins généralistes."
     ],
     "GOTO": [
       "[IF keyword:DODO] \"Continuer\" ►431",
-      "[ELSE] [EFFECT getItem:the NHS] \"Continuer\" ►450"
+      "[ELSE] [EFFECT getItem:le NHS] \"Continuer\" ►450"
     ]
   },
   "111": {
@@ -1518,32 +1518,32 @@
   },
   "114": {
     "PROSE": [
-      "'That if Britain adopted their model we wouldn't like it. Though probably what she meant was that she didn't like it.'",
-      "'Why does she put up with it, then?' says Barkwell.",
-      "Stollard looks at him as if he's landed from outer space. 'Referendums. She knows Norway would be better off in the EU, but the Norwegian people are more at home in a shack on the edge of a glacier.'",
-      "Barkwell drums his fingers on the table. 'The simple fact is, Norway has to pay a sizeable proportion of EU membership fee, and it has to accept the four freedoms, and its courts have to abide by ECJ rulings – and after all that it gets no say in how the bloody EU is run.'"
+      "« Que si la Grande-Bretagne adoptait leur modèle, cela ne nous plairait pas. Bien que ce qu'elle voulait probablement dire, c'est qu'elle n'aimait pas ça. »",
+      "« Pourquoi le supporte-t-elle, alors ? » dit Barkwell.",
+      "Stollard le regarde comme s'il débarquait d'une autre planète. « Les référendums. Elle sait que la Norvège se porterait mieux au sein de l'UE, mais le peuple norvégien se sent plus chez lui dans une cabane au bord d'un glacier. »",
+      "Barkwell tambourine sur la table. « Le fait est que la Norvège doit payer une proportion considérable de la cotisation à l'UE, elle doit accepter les quatre libertés, ses tribunaux doivent se conformer aux arrêts de la CJUE – et après tout ça, elle n'a aucune voix au chapitre sur la gestion de cette fichue UE. »"
     ],
     "OPTIONS": [
-      "[OPTION] \"'We'd be worse off than we are now.'\" ►709",
-      "[OPTION] \"'Even so, let's not rule it out just yet.'\" ►17"
+      "[OPTION] \"« Nous serions encore plus mal lotis qu'actuellement. »\" ►709",
+      "[OPTION] \"« Même ainsi, n'écartons pas cette option tout de suite. »\" ►17"
     ]
   },
   "115": {
     "PROSE": [
-      "'The merits of the proposal would be seen over several years,' says the German Chancellor. 'Let this nationalist wind blow over. Meanwhile, we in the EU will debate the terms of free movement and agree a new treaty. Many feel that there are unfairnesses in the current system, and while I don't personally believe it is fundamentally flawed I am open to discussion.'",
-      "'I still don't see what difference this will make to Britain. What you're talking about will take a decade. You know how long it takes the EU to make up its mind about anything. And we won't have a vote anyway, as we'll be out.'",
-      "'I'm sure that many of the EU27 will consult with Britain – off the record, of course – in order to find a wording of the free movement rules that you could sign up to.'",
-      "She means Britain could rejoin the EU. It's a proposal to rework some terms of freedom of movement to make it acceptable to the British electorate of 2028. Is that daringly radical, or hopelessly utopian?"
+      "« Les mérites de cette proposition se verraient sur plusieurs années, dit la chancelière allemande. Laissons ce vent nationaliste passer. En attendant, nous au sein de l'UE débattrons des termes de la libre circulation et conviendrons d'un nouveau traité. Beaucoup estiment qu'il y a des injustices dans le système actuel, et bien que je ne pense pas personnellement qu'il soit fondamentalement défaillant, je suis ouverte à la discussion. »",
+      "« Je ne vois toujours pas quelle différence cela fera pour la Grande-Bretagne. Ce dont vous parlez prendra une décennie. Vous savez combien de temps il faut à l'UE pour se décider sur quoi que ce soit. Et nous n'aurons plus voix au chapitre de toute façon, puisque nous serons sortis. »",
+      "« Je suis sûre que nombre des Vingt-Sept consulteront la Grande-Bretagne – officieusement, bien entendu – afin de trouver une formulation des règles de libre circulation que vous pourriez accepter. »",
+      "Elle veut dire que la Grande-Bretagne pourrait réintégrer l'UE. C'est une proposition de reformuler certains termes de la liberté de circulation pour les rendre acceptables à l'électorat britannique de 2028. Est-ce audacieusement radical, ou désespérément utopique ?"
     ],
     "OPTIONS": [
-      "[OPTION] \"'It's not going to happen. Britain is quitting the EU and we're never coming back.'\" ►636",
-      "[OPTION] \"'I can't go home with such a wishy-washy proposal. We need clear immigration controls right now, in the form of a visa system.'\" ►839"
+      "[OPTION] \"« Cela n'arrivera pas. La Grande-Bretagne quitte l'UE et nous ne reviendrons jamais. »\" ►636",
+      "[OPTION] \"« Je ne peux pas rentrer chez moi avec une proposition aussi vague. Nous avons besoin de contrôles migratoires clairs dès maintenant, sous la forme d'un système de visas. »\" ►839"
     ]
   },
   "116": {
     "PROSE": [
-      "Eh? What's this YouTube video? Oh, heh! Look at that pet meerkat stealing the dinner guest's food off her plate! Hilarious! Hah, hah! Oops – she's coming back. Hah, the meerkat looks as guilty as hell, like Tode the day after the referendum when he stabbed Strewel in the back. But he's still wolfing that chicken down, come what may, just like Tode, hah, hah!",
-      "No, no. Enough distractions. You have to get back to work. You retype 'single market' into your search engine, this time spelling it correctly."
+      "Hein ? C'est quoi cette vidéo YouTube ? Oh, hé ! Regardez ce suricate domestique qui vole la nourriture de l'invitée dans son assiette ! Hilarant ! Ha, ha ! Oups – elle revient. Ha, le suricate a l'air aussi coupable que Tode le lendemain du référendum quand il a poignardé Strewel dans le dos. Mais il continue d'engloutir ce poulet coûte que coûte, tout comme Tode, ha, ha !",
+      "Non, non. Assez de distractions. Vous devez retourner au travail. Vous retapez « marché unique » dans votre moteur de recherche, cette fois en l'orthographiant correctement."
     ],
     "OPTIONS": [
       "[OPTION] \"Continuer\" ►190"
@@ -1551,10 +1551,10 @@
   },
   "117": {
     "PROSE": [
-      "'That's the usual line, but since we're talking freely I can't see it making up the difference. Not even close. For one thing, the EU is our natural trading partner in terms of both proximity and in the nature of its markets. New deals will take time, and our ability to strike those deals is affected by our negotiating strength. Our economy will be a sixth the size of the EU's post-Brexit, and in many cases they'll be chasing the same contracts as us.'",
-      "'Let's hope you're wrong.'",
-      "'It's like climate change, isn't it? The data are saying something many politicians can't allow themselves to hear. But I'm old school, as you know. I still have faith in experts.'",
-      "'OK. Tell me what the experts say.'"
+      "« C'est le discours habituel, mais puisque nous parlons librement, je ne vois pas comment cela comblerait la différence. Pas même de loin. D'abord, l'UE est notre partenaire commercial naturel en termes de proximité et de nature de ses marchés. De nouveaux accords prendront du temps, et notre capacité à les conclure dépend de notre poids dans les négociations. Notre économie représentera un sixième de celle de l'UE après le Brexit, et dans bien des cas ils brigueront les mêmes contrats que nous. »",
+      "« Espérons que vous vous trompez. »",
+      "« C'est comme le changement climatique, non ? Les données disent quelque chose que beaucoup de politiciens ne peuvent pas se permettre d'entendre. Mais je suis de la vieille école, comme vous savez. J'ai encore foi dans les experts. »",
+      "« D'accord. Dites-moi ce que disent les experts. »"
     ],
     "OPTIONS": [
       "[OPTION] \"Continuer\" ►772"
@@ -1562,17 +1562,17 @@
   },
   "118": {
     "PROSE": [
-      "'They won't want to set a dangerous precedent either,' Stollard points out. 'Whatever package we get, the EU can't let it seem a sweeter deal than full membership or the whole thing would fall apart.'",
-      "'It will anyway,' says Dent with a gleeful little grin.",
-      "'Maybe, but that doesn't help us. The point is that we can be sure the Commission won't say, \"Fine, keep your financial passports and tariff-free trade. We're happy that you won't accept free movement, automatic compliance with EU trade law, or pay anything into the EU budget.\" Something has to give.'",
-      "Strewel suddenly booms out in a richly resonant voice: 'Across the Channel, intellects cool and unsympathetic are regarding this island with envious eyes, and slowly and surely drawing their plans against us.'",
-      "Everyone looks at him in astonishment.",
-      "'My Richard Burton impression,' he says. 'Used to go down a treat in the Union bar. Anyway, whether it's Martians or Krauts, the fact remains they will all want to carve a piece off Britain's financial rump if we let them get hold of the knife. We've got to watch out for that.'"
+      "« Ils ne voudront pas non plus créer un dangereux précédent, fait remarquer Stollard. Quel que soit l'arrangement que nous obtenions, l'UE ne peut pas laisser croire que c'est un accord plus avantageux que l'adhésion pleine et entière, sinon tout l'édifice s'effondrerait. »",
+      "« Il s'effondrera de toute façon », dit Dent avec un petit sourire réjoui.",
+      "« Peut-être, mais cela ne nous aide pas. Ce qui est sûr, c'est que la Commission ne dira pas : \\\"Très bien, gardez vos passeports financiers et votre commerce en franchise de droits. Nous sommes ravis que vous n'acceptiez ni la libre circulation, ni la conformité automatique au droit commercial de l'UE, ni de payer quoi que ce soit au budget européen.\\\" Quelque chose devra céder. »",
+      "Strewel lance soudain d'une voix riche et résonante : « Across the Channel, intellects cool and unsympathetic are regarding this island with envious eyes, and slowly and surely drawing their plans against us. »",
+      "Tout le monde le regarde avec stupéfaction.",
+      "« Mon imitation de Richard Burton, dit-il. Ça faisait un tabac au bar du syndicat étudiant. Quoi qu'il en soit, que ce soit des Martiens ou des Boches, le fait demeure qu'ils voudront tous découper un morceau de la croupe financière de la Grande-Bretagne si on leur laisse prendre le couteau. Il faut y veiller. »"
     ],
     "OPTIONS": [
-      "[OPTION] \"'When it comes to the negotiations, what have we got in our favour?'\" ►495",
-      "[OPTION] \"'I think that will do for today, gentlemen.'\" ►81",
-      "[OPTION] \"'What's likely to happen if we can't get a deal? Then it's WTO rules, am I right?'\" ►826"
+      "[OPTION] \"« En matière de négociations, qu'avons-nous en notre faveur ? »\" ►495",
+      "[OPTION] \"« Je pense que ce sera tout pour aujourd'hui, messieurs. »\" ►81",
+      "[OPTION] \"« Que se passera-t-il probablement si nous n'obtenons pas d'accord ? Ce seront les règles de l'OMC, j'ai bien compris ? »\" ►826"
     ]
   },
   "119": {
@@ -1590,11 +1590,11 @@
   },
   "120": {
     "PROSE": [
-      "'It just means that the treaty automatically updates to reflect changes in EU legislation. Normally the Swiss would have to formally rubber-stamp any new rules coming from Brussels, but doing that every time slowed things up. The dynamic clauses mean they've already agreed to changes in advance. Really, after all the fuss and bother, the Swiss have gone a long way round the houses to end up with a kludgier version of the standard EEA deal.'"
+      "« Cela signifie simplement que le traité se met automatiquement à jour pour refléter les changements de la législation européenne. Normalement, les Suisses devraient formellement approuver chaque nouvelle règle venant de Bruxelles, mais le faire à chaque fois ralentissait les choses. Les clauses dynamiques signifient qu'ils ont déjà accepté les changements par avance. Au bout du compte, après toutes ces complications, les Suisses ont fait un grand détour pour aboutir à une version plus bricolée de l'accord EEE standard. »"
     ],
     "OPTIONS": [
-      "[OPTION] \"'But it's still technically sovereignty.'\" ►509",
-      "[OPTION] \"'Hardly ideal. We don't want to look like we're subservient to EU jurisdiction.'\" ►378"
+      "[OPTION] \"« Mais c'est techniquement la souveraineté. »\" ►509",
+      "[OPTION] \"« Guère idéal. Nous ne voulons pas avoir l'air soumis à la juridiction de l'UE. »\" ►378"
     ]
   },
   "121": {
