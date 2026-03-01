@@ -10530,21 +10530,21 @@
   },
   "814": {
     "PROSE": [
-      "The leadership results are in. You sit gazing out of the window in a state of shock.",
-      "'It is a tale told by an idiot, Wilkins.'",
-      "He sets a cup of tea in front of you. 'Are you looking at President Windrip's tweets again, Prime Minister?'",
-      "'No, man. The damned leadership contest. The rug – pulled from under me.'",
-      "'Distressing, indeed. I'm sure we shall miss you, and in that I include all of the Number 10 staff.'",
-      "'Thank you, Wilkins.'",
-      "He turns at the door and regards you solemnly. 'If it is any consolation, I would say it is rare that one gets to let go of a tiger's tail without getting one's hand bitten off.'",
-      "And with that he goes to pack your things and make ready for the new Prime Minister.",
-      "<p class=\"centered\">THE END</p>"
+      "Les résultats de l'élection à la direction du parti sont tombés. Vous restez assis, le regard perdu par la fenêtre, en état de choc.",
+      "« C'est une histoire racontée par un idiot, Wilkins. »",
+      "Il pose une tasse de thé devant vous. « Vous regardez encore les tweets du président Windrip, Premier ministre ? »",
+      "« Non, mon brave. Ce maudit scrutin pour la direction du parti. Le tapis – qu'on m'a tiré sous les pieds. »",
+      "« Navrant, en effet. Je suis certain que vous nous manquerez, et j'inclus dans ce sentiment l'ensemble du personnel du 10 Downing Street. »",
+      "« Merci, Wilkins. »",
+      "Il se retourne sur le pas de la porte et vous considère d'un air solennel. « Si cela peut vous consoler, je dirais qu'il est rare que l'on puisse lâcher la queue d'un tigre sans se faire mordre la main. »",
+      "Et sur ce, il s'en va emballer vos affaires et préparer les lieux pour le nouveau Premier ministre.",
+      "<p class=\"centered\">FIN</p>"
     ]
   },
   "815": {
     "PROSE": [
-      "True to his word, perhaps for the first time ever, Peter Strewel endorses your views.",
-      "'The Prime Minister is right,' he tells reporters. 'Can't have a democratic solution that rides roughshod over the wishes of nearly half the country, can we? Not a question of hard or soft, we're going to have a <em>better</em> Brexit. The kind of Brexit everyone can get behind. Then we can show the world a bit of that British pluck last seen in the War, eh? All pulling together to get to the promised land.'"
+      "Fidèle à sa parole, peut-être pour la première fois de sa vie, Peter Strewel approuve publiquement vos positions.",
+      "« Le Premier ministre a raison, déclare-t-il aux journalistes. On ne peut pas avoir une solution démocratique qui piétine les souhaits de près de la moitié du pays, n'est-ce pas ? Il ne s'agit pas de Brexit dur ou mou, nous allons avoir un <em>meilleur</em> Brexit. Le genre de Brexit auquel tout le monde peut adhérer. Ensuite, nous pourrons montrer au monde un peu de ce cran britannique qu'on n'avait plus vu depuis la guerre, hein ? Tous unis pour atteindre la terre promise. »"
     ],
     "OPTIONS": [
       "[OPTION] \"Continuer\" ►486"
@@ -10552,7 +10552,7 @@
   },
   "816": {
     "PROSE": [
-      "'I believe wholeheartedly in Brexit. The people have spoken, now we must cut our ties with Europe.'"
+      "« Je crois de tout cœur au Brexit. Le peuple s'est exprimé, nous devons maintenant couper nos liens avec l'Europe. »"
     ],
     "GOTO": [
       "[IF keyword:HEMLOCK OR keyword:BLEAK OR keyword:KOALA] \"En avant\" ►28",
@@ -10562,28 +10562,28 @@
   },
   "817": {
     "PROSE": [
-      "You'd forgotten Terri's nephew, who's here on sufferance because she and Ron thought a kid-to-work day would humanize you. He flicks a bored glance at you through a long fringe of gel-spiked hair before going back to his phone.",
-      "'It's a very big Death Star..?' says Terri uncertainly.",
-      "'Dunno what that is,' grunts the nephew. 'But it's mustard, blows up planets and shit.'",
-      "'And that helps us how?'",
-      "'Always a weak point, isn't there? Gerbil Whassis-Feet, he'll have something you can turn against him.'",
-      "There are a few minutes of silence, punctuated only by the muted <em>ping-ping-ping-BOOM</em> of the wretched child's phone game, as you all mull over that. Then everyone speaks at once.",
-      "'I could dig up some dirt on him,' suggests Terri.",
-      "'We need to play on his lack of experience,' says Ron.",
-      "'Beat him at his own game?' you say, thinking aloud. 'Show the members I can be even more ultra on Brexit?'",
-      "'Go judo,' says the nephew. 'He moves one way, you shift the other. Unexpected. Element of surmise or whatever. That's how you throw 'em.'",
-      "What's it to be?"
+      "Vous aviez oublié le neveu de Terri, qui est là par charité parce qu'elle et Ron avaient pensé qu'une journée « Emmenez un enfant au travail » vous humaniserait. Il vous jette un regard ennuyé à travers une longue frange de cheveux hérissés au gel avant de retourner à son téléphone.",
+      "« C'est une très grosse Étoile de la Mort… ? » hasarde Terri d'un ton incertain.",
+      "« Sais pas c'que c'est, grommelle le neveu. Mais elle déchire, elle fait exploser des planètes et tout. »",
+      "« Et en quoi cela nous aide-t-il ? »",
+      "« Y a toujours un point faible, pas vrai ? Le Gerbil Machin-Chose, il aura bien un truc que vous pouvez retourner contre lui. »",
+      "Quelques minutes de silence s'écoulent, ponctuées uniquement par les <em>ping-ping-ping-BOUM</em> étouffés du jeu sur téléphone de ce satané gamin, tandis que vous méditez tous cette remarque. Puis tout le monde parle en même temps.",
+      "« Je pourrais déterrer des casseroles sur lui », suggère Terri.",
+      "« Nous devons jouer sur son manque d'expérience », dit Ron.",
+      "« Le battre sur son propre terrain ? dites-vous en pensant tout haut. Montrer aux adhérents que je peux être encore plus radical sur le Brexit ? »",
+      "« Faites du judo, dit le neveu. Il va dans un sens, vous allez dans l'autre. L'imprévu. L'élément de surprise ou je sais pas quoi. C'est comme ça qu'on les met au tapis. »",
+      "Que décidez-vous ?"
     ],
     "OPTIONS": [
-      "[OPTION] \"Look for a scandal. Everybody's got something to hide\" ►856",
-      "[OPTION] \"Emphasize Noysom-Reek's lack of experience\" ►717",
-      "[OPTION] \"Beat him at his own game. Pivot back from soft to very hard Brexit\" ►499",
-      "[OPTION] \"Be statesmanlike. Draw back from extreme positions and make the case for moderation\" ►121"
+      "[OPTION] \"Chercher un scandale. Tout le monde a quelque chose à cacher\" ►856",
+      "[OPTION] \"Souligner le manque d'expérience de Noysom-Reek\" ►717",
+      "[OPTION] \"Le battre sur son propre terrain. Revenir d'un Brexit mou à un Brexit très dur\" ►499",
+      "[OPTION] \"Jouer les hommes d'État. S'éloigner des positions extrêmes et plaider pour la modération\" ►121"
     ]
   },
   "818": {
     "PROSE": [
-      "As you approach the final round of Parliamentary Party voting, it's time to take stock of your opponents."
+      "Alors que vous approchez du dernier tour de scrutin au sein du groupe parlementaire, il est temps de faire le bilan de vos adversaires."
     ],
     "GOTO": [
       "[IF keyword:NYLON] \"Poursuivre\" ►193",
@@ -10592,19 +10592,19 @@
   },
   "819": {
     "PROSE": [
-      "A burgeoning economy gives the lie to all the Project Fear scare-mongering from the 2016 campaign. Retail spending is up – on credit, admittedly. And the hike in prices on imported goods hasn't hit the shops yet. The general mood of the country seems to be that Britain would fare very well outside the EU.",
-      "'If people just vote on the basis of their purses and wallets, it'll be a shoo-in for a hard Brexit,' reckons your chief of staff.",
-      "'It's never that simple.  People care about their finances, but they care almost as much about their feelings.'",
-      "Look at the Goodwill score on your Memo Pad. This gives a sense of how amicably the EU27 are behaving towards Britain at the moment."
+      "Une économie florissante dément toutes les prédictions alarmistes du Projet Peur de la campagne de 2016. Les dépenses de consommation sont en hausse – à crédit, certes. Et la flambée des prix sur les produits importés n'a pas encore atteint les rayons. L'humeur générale du pays semble être que la Grande-Bretagne s'en sortirait très bien hors de l'UE.",
+      "« Si les gens votent uniquement en fonction de leur porte-monnaie, un Brexit dur est assuré », estime votre directeur de cabinet.",
+      "« Ce n'est jamais aussi simple. Les gens se soucient de leurs finances, mais ils se soucient presque autant de leurs sentiments. »",
+      "Consultez le score de Bienveillance sur votre Bloc-Notes. Il donne une idée de l'amabilité dont les 27 de l'UE font preuve envers la Grande-Bretagne en ce moment."
     ],
     "GOTO": [
-      "[IF Goodwill>=52] \"Quite pally, as it happens\" ►463",
-      "[ELSE] \"Not the best of friends\" ►581"
+      "[IF Goodwill>=52] \"Plutôt bons amis, en fait\" ►463",
+      "[ELSE] \"Pas les meilleurs amis du monde\" ►581"
     ]
   },
   "820": {
     "PROSE": [
-      "As the country dissolves yet again into a cacophony of recrimination, regret and hatred, you're just glad you had the sense to keep out of it. When the smoke clears, each side will despise the other and you alone will remain untarnished by the vituperative debate."
+      "Tandis que le pays sombre une fois de plus dans une cacophonie de récriminations, de regrets et de haine, vous êtes simplement soulagé d'avoir eu la sagesse de rester en dehors de tout cela. Quand la fumée se dissipera, chaque camp méprisera l'autre et vous seul resterez intact, épargné par ce débat venimeux."
     ],
     "TOSS_TWO": [
       "[BOTH HEADS] \"Continuer\" ►173",
@@ -10620,27 +10620,27 @@
   },
   "822": {
     "PROSE": [
-      "At least there's no need to discuss Britain's continued involvement with Europol. There's already a precedent for close cooperation between EU police forces and other countries. You quickly agree a relationship along the same lines that the US and Australia currently enjoy, with British liaison officers at Europol and EU officers based at key UK police departments.",
-      "You meet with Chief Negotiator Franjeboom. 'Now we have our ducks in a row,' he says, 'it is time to consider the drake.'",
-      "'That probably loses something in translation.'",
-      "His smile doesn't waver. 'I refer to military cooperation in the aftermath of Brexit.'",
-      "'My government has repeatedly assured the EU that we will continue to cooperate proactively. As Britain is the most significant military power in Europe, I'm sure that's in everyone's interests.'",
-      "'You have the largest military budget, at any rate,' he says. 'The way the pound is now, that doesn't go as far as it used to. In any case, you should be aware that Britain's departure removes one of the main obstacles to much greater integration of European armed forces. Will you be willing to engage with the \"EU army\" your Leave politicians fulminated over?'"
+      "Au moins, nul besoin de discuter de la poursuite de la coopération britannique avec Europol. Il existe déjà un précédent de collaboration étroite entre les forces de police de l'UE et d'autres pays. Vous convenez rapidement d'une relation sur le même modèle que celui dont bénéficient actuellement les États-Unis et l'Australie, avec des officiers de liaison britanniques auprès d'Europol et des agents européens détachés dans les principaux services de police du Royaume-Uni.",
+      "Vous rencontrez le négociateur en chef Franjeboom. « Maintenant que nos canards sont en rang, dit-il, il est temps de considérer le canard mâle. »",
+      "« Ce jeu de mots perd sans doute quelque chose à la traduction. »",
+      "Son sourire ne vacille pas. « Je fais référence à la coopération militaire dans le sillage du Brexit. »",
+      "« Mon gouvernement a assuré à maintes reprises l'UE que nous continuerions à coopérer de manière proactive. La Grande-Bretagne étant la puissance militaire la plus importante d'Europe, je suis certain que c'est dans l'intérêt de tous. »",
+      "« Vous avez le budget militaire le plus élevé, en tout cas, dit-il. Avec l'état actuel de la livre, il ne va plus aussi loin qu'avant. Quoi qu'il en soit, sachez que le départ de la Grande-Bretagne lève l'un des principaux obstacles à une intégration bien plus poussée des forces armées européennes. Serez-vous disposé à vous engager dans cette \\\"armée européenne\\\" contre laquelle vos politiciens du Leave ont tant fulminé ? »"
     ],
     "OPTIONS": [
-      "[OPTION] \"'I'm afraid Britain can't possibly subordinate her forces to missions over which we have little strategic or tactical control.'\" ►301",
-      "[OPTION] \"'We're willing to pull our weight, but we must insist on a special arrangement that gives us equal influence over the planning of joint military ventures.'\" ►279"
+      "[OPTION] \"« Je crains que la Grande-Bretagne ne puisse en aucun cas subordonner ses forces à des missions sur lesquelles nous n'avons guère de contrôle stratégique ou tactique. »\" ►301",
+      "[OPTION] \"« Nous sommes prêts à faire notre part, mais nous devons insister pour obtenir un arrangement spécial qui nous confère une influence égale sur la planification des opérations militaires conjointes. »\" ►279"
     ]
   },
   "823": {
     "PROSE": [
-      "'You're the least popular Prime Minister since Eden bungled the Suez crisis.'",
-      "Lord Elmstead is going over the results you commissioned from his polling company. It doesn't make comforting reading.",
-      "'But sometimes the most unpopular leaders also get the highest scores in popularity,' you remind him. 'Think of President Windrip. The deplorables absolutely love him.'",
-      "'True, and there's the silver lining. As long as you have high approval ratings among your core supporters, and as long as the opposition is divided and your grip on the party is strong, overall unpopularity can't hurt you.'",
-      "The key is to continue the erosion of Parliamentary sovereignty that has been going on for at least a hundred years. Concentrate power in the executive, who are answerable to party members rather than the electorate as a whole, and you should be able to hang on.",
-      "And if not, and you're ousted before the next election, so what? You'll easily nab a few directorships. You'll coin it in with after-dinner speeches. And then there are the memoirs. If history looks back on you unkindly for your handling of Brexit – well, at least nobody's calling you a war criminal. And anyway, you only did what the people told you.",
-      "<p class=\"centered\">THE END</p>"
+      "« Vous êtes le Premier ministre le moins populaire depuis qu'Eden a bâclé la crise de Suez. »",
+      "Lord Elmstead passe en revue les résultats que vous avez commandés à son institut de sondages. La lecture n'en est guère réconfortante.",
+      "« Mais il arrive que les dirigeants les plus impopulaires obtiennent aussi les meilleurs scores de popularité, lui rappelez-vous. Pensez au président Windrip. Les déplorables l'adorent. »",
+      "« C'est vrai, et c'est là que se trouve le bon côté des choses. Tant que vous avez des taux d'approbation élevés parmi vos partisans les plus fidèles, et tant que l'opposition est divisée et que votre emprise sur le parti est solide, l'impopularité générale ne peut pas vous nuire. »",
+      "L'essentiel est de poursuivre l'érosion de la souveraineté parlementaire qui est en cours depuis au moins un siècle. Concentrez le pouvoir dans l'exécutif, qui rend des comptes aux adhérents du parti plutôt qu'à l'ensemble de l'électorat, et vous devriez pouvoir vous maintenir.",
+      "Et sinon, si vous êtes évincé avant les prochaines élections, qu'importe ? Vous décrocherez facilement quelques postes d'administrateur. Vous vous enrichirez grâce aux discours après dîner. Et puis il y aura les mémoires. Si l'Histoire porte sur vous un regard sévère pour votre gestion du Brexit – eh bien, au moins personne ne vous traite de criminel de guerre. Et de toute façon, vous n'avez fait que ce que le peuple vous a demandé.",
+      "<p class=\"centered\">FIN</p>"
     ]
   },
   "824": {
@@ -10648,11 +10648,11 @@
       "[EFFECT Economy+1]"
     ],
     "PROSE": [
-      "The Health Secretary goes on <em>News Talk</em> to discuss the visa initiative. 'The NHS is the envy of the world,' he says. 'And our message today is that we want the best doctors, the best nurses. Brexit isn't about pulling up the drawbridge, it's about deciding who gets to come here. No more floods of half-qualified quacks taking out the wrong kidney. From now on, our health care is on the gold standard.'",
-      "He's a blithering idiot, obviously. And his quip about the drawbridge will lose some of the madder hard Brexit voters. But all in all you can bask in the satisfaction of a job spun to look as if it's being done well."
+      "Le secrétaire d'État à la Santé passe sur <em>News Talk</em> pour évoquer l'initiative sur les visas. « Le NHS fait l'envie du monde entier, dit-il. Et notre message aujourd'hui est que nous voulons les meilleurs médecins, les meilleures infirmières. Le Brexit, ce n'est pas relever le pont-levis, c'est décider qui a le droit de venir chez nous. Plus question de flots de charlatans à moitié qualifiés qui vous enlèvent le mauvais rein. Désormais, nos soins de santé sont au plus haut niveau. »",
+      "C'est un parfait imbécile, bien évidemment. Et sa boutade sur le pont-levis vous fera perdre quelques-uns des partisans les plus enragés du Brexit dur. Mais dans l'ensemble, vous pouvez savourer la satisfaction d'un travail présenté sous un jour favorable."
     ],
     "REPORT": [
-      "<strong>+1% Economy</strong>: any message of welcome sent out to qualified immigrants helps reassure the world that Britain hasn't entirely shut up shop."
+      "<strong>+1 % Économie</strong> : tout message d'accueil adressé aux immigrés qualifiés contribue à rassurer le monde que la Grande-Bretagne n'a pas entièrement fermé boutique."
     ],
     "GOTO": [
       "[IF keyword:DODO] \"Continuer\" ►431",
@@ -10851,94 +10851,94 @@
   },
   "842": {
     "PROSE": [
-      "'Freedom of movement was never part of the original intention of the EU,' you tell them. 'What Britain signed up to was free movement of labour. Nobody takes issue with that. That's an economic necessity, whereas untrammelled freedom of movement is a political edict.'",
-      "You note the scowls on many of their faces. 'It is well known that Britain has been resistant to the idea of ever-closer union,' says the Dutch prime minister.",
-      "'Oh come now, it's not just us. Wake up and smell the tulips, mynheer. The original treaty allowed for workers to move around the old European Economic Community. But what's happened over the last forty years is that the European Court has pushed free movement by stealth. So now you've got people coming in, saying they're looking for work, bringing in their spouses and children, applying for housing benefits…'",
-      "'Abusing the system? It's a tiny proportion of people doing that.'",
-      "'Maybe. But the voters don't perceive it that way. I'm not just talking about Britain. Different states have different attitudes and different visions of where they see the EU going. Regardless of what we decide at this summit, you're going to have to create a two-speed Europe.'",
-      "'For the benefit of the great British people we must do this?' cries the French President, flinging his arms wide in mockery.",
-      "'No. You must do it so that your union doesn't tear itself apart.'",
-      "'Even if what you say is true,' argues President Terlamen, 'it will take time. A menu of options for continental partnership? Our successors will still be discussing the terms when most of us here have retired. What do you propose in the meantime?'"
+      "« La liberté de circulation n'a jamais fait partie de l'intention originelle de l'UE », leur dites-vous. « Ce à quoi la Grande-Bretagne a souscrit, c'était la libre circulation des travailleurs. Personne n'y trouve à redire. C'est une nécessité économique, tandis qu'une liberté de circulation sans entraves est un décret politique. »",
+      "Vous remarquez les mines renfrognées sur bon nombre de leurs visages. « Il est bien connu que la Grande-Bretagne a toujours résisté à l'idée d'une union sans cesse plus étroite », déclare le Premier ministre néerlandais.",
+      "« Allons donc, ce n'est pas que nous. Réveillez-vous et sentez les tulipes, mynheer. Le traité originel autorisait les travailleurs à circuler au sein de l'ancienne Communauté économique européenne. Mais ce qui s'est passé au cours des quarante dernières années, c'est que la Cour européenne a étendu la libre circulation en catimini. Si bien qu'aujourd'hui vous avez des gens qui arrivent, qui disent chercher du travail, qui amènent leurs conjoints et leurs enfants, qui demandent des aides au logement… »",
+      "« Abuser du système ? Ce n'est qu'une infime proportion de gens qui fait cela. »",
+      "« Peut-être. Mais les électeurs ne le perçoivent pas ainsi. Et je ne parle pas que de la Grande-Bretagne. Différents États ont différentes attitudes et différentes visions de l'avenir qu'ils envisagent pour l'UE. Indépendamment de ce que nous déciderons lors de ce sommet, vous allez devoir créer une Europe à deux vitesses. »",
+      "« Pour le bénéfice du grand peuple britannique, nous devons faire cela ? » s'écrie le président français en écartant théâtralement les bras.",
+      "« Non. Vous devez le faire pour que votre union ne se déchire pas. »",
+      "« Même si ce que vous dites est vrai », argumente le président Terlamen, « cela prendra du temps. Un menu d'options pour un partenariat continental ? Nos successeurs en discuteront encore les termes quand la plupart d'entre nous ici seront à la retraite. Que proposez-vous en attendant ? »"
     ],
     "OPTIONS": [
-      "[OPTION] \"'For the time being we'll adopt a \"free movement emulator\", mirroring EU legislation in British law. It'll be much like it is now, only our courts will be rigorous in enforcing the rules.'\" ►59",
-      "[OPTION] \"'In the meantime I intend to introduce quotas so that I can meet my promise to the British people to get immigration down below 100,000 a year.'\" ►497"
+      "[OPTION] \"« Pour l'instant, nous adopterons un « émulateur de libre circulation », reproduisant la législation européenne dans le droit britannique. Ce sera à peu près comme maintenant, sauf que nos tribunaux appliqueront les règles avec rigueur. »\" ►59",
+      "[OPTION] \"« En attendant, j'ai l'intention d'introduire des quotas afin de tenir ma promesse au peuple britannique de ramener l'immigration en dessous de 100 000 par an. »\" ►497"
     ]
   },
   "843": {
     "PROSE": [
-      "'Against: abortion, same-sex marriage, immigrants, industrial controls to reverse climate change – and of course the EU. For: zero-hour contracts, fox hunting, a Conservative alliance with UKIP – and for a while he supported both the Syrian government and Dumpster Windrip, but later had second thoughts about those.'",
-      "Terri Trough turns from the white board with a fat marker pen in each hand. 'In short, Gervais Noysom-Reek's views overlap pretty strongly with the core Party member.'",
-      "'It's not all bad news,' says Ron. 'He's actually spoken against the death penalty and corporal punishment. That won't sit well with a lot of the faithful. And of course he's twenty years younger than the average member.'",
-      "'And sort of posh,' adds Terri, trying to find a marker colour to indicate that. 'Smacks a bit of the previous leadership, maybe?'",
-      "You shake your head. 'He's more incense and cassocks than rugger and magnums of the Widow. Totally different breed of upper class. The sort the membership instinctively tug their forelocks to. Bugger it, they're going to love him.'",
-      "'Even a Starkiller Base has a weakness,' pipes up a squeaky voice from the corner."
+      "« Contre : l'avortement, le mariage homosexuel, les immigrés, les contrôles industriels pour inverser le changement climatique — et bien sûr l'UE. Pour : les contrats zéro heure, la chasse à courre, une alliance conservatrice avec UKIP — et pendant un temps il a soutenu à la fois le gouvernement syrien et Dumpster Windrip, mais il est ensuite revenu sur ces positions. »",
+      "Terri Trough se retourne du tableau blanc, un gros marqueur dans chaque main. « En résumé, les opinions de Gervais Noysom-Reek recoupent assez fortement celles de l'adhérent de base du Parti. »",
+      "« Ce n'est pas que des mauvaises nouvelles », dit Ron. « Il s'est en fait prononcé contre la peine de mort et les châtiments corporels. Cela ne passera pas bien auprès d'une bonne partie des fidèles. Et bien sûr il a vingt ans de moins que l'adhérent moyen. »",
+      "« Et plutôt chic », ajoute Terri en cherchant une couleur de marqueur pour représenter cela. « Ça rappelle un peu la direction précédente, peut-être ? »",
+      "Vous secouez la tête. « Il est davantage encens et soutanes que rugby et magnums de la Veuve. Une catégorie de classe supérieure totalement différente. Le genre devant lequel les adhérents tirent instinctivement leur chapeau. Bon sang, ils vont l'adorer. »",
+      "« Même une Base Starkiller a un point faible », lance une voix fluette depuis le coin de la pièce."
     ],
     "OPTIONS": [
-      "[OPTION] \"'What's a Starkiller Base?'\" ►817",
-      "[OPTION] \"'Get this child out of here.'\" ►278"
+      "[OPTION] \"« C'est quoi, une Base Starkiller ? »\" ►817",
+      "[OPTION] \"« Faites sortir cet enfant d'ici. »\" ►278"
     ]
   },
   "844": {
     "PROSE": [
-      "An audacious claim. Will it wash?"
+      "Une affirmation audacieuse. Sera-t-elle convaincante ?"
     ],
     "GOTO": [
-      "[IF Popularity>=69] \"It just might\" ►12",
+      "[IF Popularity>=69] \"C'est bien possible\" ►12",
       "[ELSE] \"Voyons voir\" ►675"
     ]
   },
   "845": {
     "PROSE": [
-      "There is a resigned sigh around the table as they see you won't be dissuaded.",
-      "'What kind of referendum?' pipes up a voice from the far end.",
-      "'Who said that?'",
-      "A sheepishly grinning face leans forward. You fight the urge to get up, walk along the table and punch him.",
-      "'Tode? Are you back in Cabinet?'",
-      "'Environment Secretary,' he says. 'And thank you, Prime Minister, for the opportunity – '",
-      "'All right. I'm not Dumpster Windrip. I don't need stroking, man. Spit it out. What kinds of referendum are there? It's just yes or no, isn't it?'",
-      "'It could be,' says Tode with a goofy chuckle. 'Just Leave or Remain like last time, that's an option. Or we could drill down, give people a range of options to choose between.'",
-      "'Steady on,' says Strewel with a guffaw. 'It's the great British public, remember. Ketchup or mayo has them spinning like a top.'",
-      "'I'm not so dismissive of the average man,' says Tode huffily. 'Anyway, there's a third option, which is to hold the referendum in rounds.'",
-      "'Rounds!' cries Leslie Barkwell, sounding for all the world like Lady Bracknell.",
-      "'The French manage it. And if we're giving more than a yes/no choice, it's the best way to find out what the public really want.'"
+      "Un soupir résigné parcourt la table lorsqu'ils voient que vous ne vous laisserez pas dissuader.",
+      "« Quel type de référendum ? » lance une voix depuis le fond de la table.",
+      "« Qui a dit ça ? »",
+      "Un visage au sourire penaud se penche en avant. Vous luttez contre l'envie de vous lever, de longer la table et de lui décocher un coup de poing.",
+      "« Tode ? Vous êtes de retour au Cabinet ? »",
+      "« Secrétaire d'État à l'Environnement », dit-il. « Et merci, Premier ministre, pour cette opportunité… »",
+      "« Bon, ça suffit. Je ne suis pas Dumpster Windrip. Je n'ai pas besoin qu'on me flatte, mon vieux. Accouchez. Quels types de référendum existe-t-il ? C'est juste oui ou non, n'est-ce pas ? »",
+      "« Ce pourrait être le cas », dit Tode avec un gloussement niais. « Simplement Quitter ou Rester comme la dernière fois, c'est une option. Ou nous pourrions aller plus loin, offrir aux gens un éventail d'options entre lesquelles choisir. »",
+      "« Doucement », dit Strewel en s'esclaffant. « C'est le grand public britannique, rappelez-vous. Ketchup ou mayonnaise suffit à les faire tourner comme une toupie. »",
+      "« Je ne méprise pas autant le citoyen moyen », dit Tode d'un ton vexé. « Quoi qu'il en soit, il y a une troisième option, qui est d'organiser le référendum en plusieurs tours. »",
+      "« Plusieurs tours ! » s'exclame Leslie Barkwell, avec des intonations dignes de Lady Bracknell.",
+      "« Les Français y arrivent bien. Et si nous offrons plus qu'un choix oui/non, c'est le meilleur moyen de savoir ce que le public veut vraiment. »"
     ],
     "OPTIONS": [
-      "[OPTION] \"'Who'll speak up for the simple yes/no option?'\" ►600",
-      "[OPTION] \"'A range of options, that could work.'\" ►698",
-      "[OPTION] \"'Tell me more about this runoff voting idea.'\" ►340"
+      "[OPTION] \"« Qui plaidera pour l'option simple oui/non ? »\" ►600",
+      "[OPTION] \"« Un éventail d'options, ça pourrait marcher. »\" ►698",
+      "[OPTION] \"« Dites-m'en plus sur cette idée de vote à plusieurs tours. »\" ►340"
     ]
   },
   "846": {
     "PROSE": [
-      "'You've already ruled that EU citizens currently living in the UK will not be allowed to stay,' President Terlamen reminds you.",
-      "He's right. There's no sense in saying now that you'll let free movement continue in any form. It would just make your earlier policy look confused. You'd be kicking out three million people only to let two and half million of them back in the following month.",
-      "So what will you propose?"
+      "« Vous avez déjà décrété que les citoyens européens résidant actuellement au Royaume-Uni ne seraient pas autorisés à rester », vous rappelle le président Terlamen.",
+      "Il a raison. Il n'y a aucun sens à dire maintenant que vous laisserez la libre circulation se poursuivre sous quelque forme que ce soit. Cela ne ferait que donner une image confuse de votre politique antérieure. Vous expulseriez trois millions de personnes pour en laisser revenir deux millions et demi le mois suivant.",
+      "Alors, que proposerez-vous ?"
     ],
     "OPTIONS": [
-      "[OPTION] \"An immigration points system allowing you to cherry-pick who gets to come to Britain\" ►216",
-      "[OPTION] \"A simple quota of fifty thousand EU immigrants a year\" ►369"
+      "[OPTION] \"Un système d'immigration à points vous permettant de sélectionner sur le volet qui peut venir en Grande-Bretagne\" ►216",
+      "[OPTION] \"Un simple quota de cinquante mille immigrants européens par an\" ►369"
     ]
   },
   "847": {
     "PROSE": [
-      "'The Druid Poet of Kernow – an official title, believe it or not – has issued a bardic statement.' The aide reads from her phone. '\"There once was a Tory prime minister, whose intentions for Cornwall were sinister...\"'",
-      "'How authentically Celtic. I'm sure they all danced around reciting stuff like that when they built Stonehenge. Not that the Stonehenge builders were Druids any more than the Cornish McGonagall there.'",
-      "'I wouldn't say anything like that, Prime Minister. It might come across a bit grammar school, if you know what I mean.'",
-      "'Come off it. The UKIP brigade lap that stuff up. Pig ignorant themselves, but they love the idea that you can get a proper education without being a nob. Anyway, forget the mad poet, I need a way to spin this that doesn't sound like pulling the plug on vital investment.'",
-      "'How about: \"For too long EU funds have been spent on things like poetry centres and community arts projects, when what the people of Cornwall have been crying out for are jobs and roads and hospitals.\"'"
+      "« Le Poète Druide de Kernow — un titre officiel, croyez-le ou non — a publié une déclaration bardique. » L'assistante lit depuis son téléphone. « \"Il était une fois un Premier ministre tory, dont les intentions pour les Cornouailles étaient bien noires…\" »",
+      "« Comme c'est authentiquement celtique. Je suis sûr qu'ils dansaient tous en rond en récitant ce genre de choses quand ils ont bâti Stonehenge. Non que les bâtisseurs de Stonehenge aient été des druides, pas plus que ce McGonagall cornouaillais. »",
+      "« Je ne dirais rien de tel, Premier ministre. Cela pourrait passer pour un peu pédant, si vous voyez ce que je veux dire. »",
+      "« Allons donc. Les gens d'UKIP raffolent de ce genre de choses. D'une ignorance crasse eux-mêmes, mais ils adorent l'idée qu'on puisse recevoir une bonne éducation sans être un aristo. Enfin bref, oubliez le poète fou, j'ai besoin d'un moyen de présenter cela sans donner l'impression de couper les vivres à des investissements vitaux. »",
+      "« Que diriez-vous de : \"Pendant trop longtemps, les fonds européens ont été dépensés pour des choses comme des centres de poésie et des projets artistiques communautaires, alors que ce que les habitants des Cornouailles réclament à grands cris, ce sont des emplois, des routes et des hôpitaux.\" »"
     ],
     "OPTIONS": [
-      "[OPTION] \"'Is that really what EU funds were going on?'\" ►86",
-      "[OPTION] \"'Remind me, how much of the EU funding can we guarantee?'\" ►721",
-      "[OPTION] \"'Sidestep the funding issue. Find me another upside for Cornwall post-Brexit.'\" ►258"
+      "[OPTION] \"« C'est vraiment à cela que servaient les fonds européens ? »\" ►86",
+      "[OPTION] \"« Rappelez-moi, quelle part du financement européen pouvons-nous garantir ? »\" ►721",
+      "[OPTION] \"« Esquivez la question du financement. Trouvez-moi un autre avantage pour les Cornouailles après le Brexit. »\" ►258"
     ]
   },
   "848": {
     "PROSE": [
-      "Running the country over the last few years has meant walking a tightrope. Despite the wrench to both the British and EU economies, you've managed to maintain a good relationship with your European allies. You can look forward to continued trade and cooperation on joint engineering, science and development projects.",
-      "The few dozen ultra-Brexiteers in your Parliamentary party are not at all happy about that. They wanted bridges burnt, not an enduring friendship that could eventually open the way for Britain's return to the EU. To them, and to the most strident flat earthers among the electorate, you're just another 'saboteur', an 'enemy of the people' who needs to be taken down.",
-      "In the long run the country will do better for the decisions you've made, but you'll have to watch the rivals who are waiting in the shadows of the forum. Those are daggers in their pockets and they're not pleased to see you."
+      "Diriger le pays ces dernières années a signifié marcher sur une corde raide. Malgré le déchirement pour les économies britannique et européenne, vous avez réussi à maintenir de bonnes relations avec vos alliés européens. Vous pouvez espérer une poursuite des échanges commerciaux et de la coopération sur des projets conjoints d'ingénierie, de science et de développement.",
+      "Les quelques dizaines d'ultra-Brexiteers dans votre groupe parlementaire ne sont pas du tout satisfaits de cela. Ils voulaient des ponts brûlés, pas une amitié durable qui pourrait éventuellement ouvrir la voie au retour de la Grande-Bretagne dans l'UE. Pour eux, et pour les platistes les plus virulents parmi l'électorat, vous n'êtes qu'un « saboteur » de plus, un « ennemi du peuple » qu'il faut abattre.",
+      "À long terme, le pays se portera mieux grâce aux décisions que vous avez prises, mais vous devrez surveiller les rivaux qui attendent dans l'ombre du forum. Ce sont des poignards qu'ils ont dans leurs poches, et ils ne sont pas ravis de vous voir."
     ],
     "OPTIONS": [
       "[OPTION] \"Continuer\" ►351"
